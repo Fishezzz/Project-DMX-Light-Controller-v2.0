@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DMX;
+using DMX.Entities.Enumerations;
 
 namespace Project_DMX_2._0
 {
@@ -23,6 +25,10 @@ namespace Project_DMX_2._0
         public MainWindow()
         {
             InitializeComponent();
+            //DmxDevice dmxDevice = new DmxDevice(1, "test");
+            //dmxDevice.Name = "a";
+            //dmxDevice.StartAddress = 1;
+            //dmxDevice.Channels = new byte[] { 1, 2 };
         }
     }
 }

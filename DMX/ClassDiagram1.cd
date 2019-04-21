@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DMX.Entities.LedMovinghead">
+    <Position X="0.5" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAA=</HashCode>
+      <FileName>Entities\LedMovinghead.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DMX.Entities.LedSpot">
+    <Position X="9.5" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAA=</HashCode>
+      <FileName>Entities\LedSpot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DMX.Entities.LedPanel">
+    <Position X="7.25" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAA=</HashCode>
+      <FileName>Entities\LedPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DMX.Entities.LaserMovinghead">
+    <Position X="2.75" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAA=</HashCode>
+      <FileName>Entities\LaserMovinghead.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DMX.Entities.LedScanner">
+    <Position X="5" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAA=</HashCode>
+      <FileName>Entities\LedScanner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DMX.DmxDevice">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>DmxDevice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="DMX.Entities.Enumerations.Devices">
+    <Position X="5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAACAAAAAAAAAAEgAAAAAAAAAAABAAAAAABA=</HashCode>
+      <FileName>Entities\Enumerations\Devices.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="DMX.Entities.Enumerations.DmxDeviceTypes">
+    <Position X="2.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAABAAAAAIAAEAAAAAAQABA=</HashCode>
+      <FileName>Entities\Enumerations\DmxDeviceTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

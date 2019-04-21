@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_DMX_2._0"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="DMX Controller v2.0" Height="450" Width="800">
     <Grid>
         
     </Grid>
