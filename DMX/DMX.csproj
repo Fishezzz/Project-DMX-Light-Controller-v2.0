@@ -44,7 +44,6 @@
     <Compile Include="DmxDevice.cs" />
     <Compile Include="Entities\LaserMovinghead.cs" />
     <Compile Include="Entities\LedScanner.cs" />
-    <Compile Include="Entities\Enumerations\Devices.cs" />
     <Compile Include="Entities\Enumerations\DmxDeviceTypes.cs" />
     <Compile Include="Entities\LedPanel.cs" />
     <Compile Include="Entities\LedSpot.cs" />
