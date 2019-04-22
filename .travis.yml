@@ -1,7 +1,7 @@
 language: csharp
 solution: Project-DMX-2.0.sln
 mono: 3.12.0
-dotnet: 4.7.2
+dotnet: 2.1.505
 git:
     depth: false
     quiet: true
