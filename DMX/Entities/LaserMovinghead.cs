@@ -9,13 +9,20 @@ namespace DMX.Entities
 {
     public class LaserMovinghead : DmxDevice
     {
-        public LaserMovinghead(string name, int startAddress, DmxDeviceTypes deviceType, int numberOfChannels)
+        const int NUMBER_OF_CHANNELS = 6;
+
+        public LaserMovinghead(string name, int startAddress, DmxDeviceTypes deviceType)
             : base(name, startAddress, deviceType)
         {
-            Channels = new byte[numberOfChannels];
+            Channels = new byte[NUMBER_OF_CHANNELS];
         }
 
         private byte[] channels;
-        public override byte[] Channels { get; }
+        public byte[] Channels { get; private set; }
+
+        public void OpenDatasheet()
+        {
+            System.Diagnostics.Process.Start(@"Datasheets\Datasheet Laser - ERO Laser.pdf");
+        }
     }
 }

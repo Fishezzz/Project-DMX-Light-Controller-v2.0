@@ -9,13 +9,20 @@ namespace DMX.Entities
 {
     public class LedScanner : DmxDevice
     {
-        public LedScanner(string name, int startAddress, DmxDeviceTypes deviceType, int numberOfChannels)
+        const int NUMBER_OF_CHANNELS = 11;
+
+        public LedScanner(string name, int startAddress, DmxDeviceTypes deviceType)
             : base(name, startAddress, deviceType)
         {
-            Channels = new byte[numberOfChannels];
+            Channels = new byte[NUMBER_OF_CHANNELS];
         }
 
         private byte[] channels;
-        public override byte[] Channels { get; }
+        public byte[] Channels { get; private set; }
+
+        public void OpenDatasheet()
+        {
+            System.Diagnostics.Process.Start(@"Datasheet LED Scanner - ALO60.pdf");
+        }
     }
 }

@@ -1,0 +1,17 @@
+﻿<Window x:Class="Project_DMX_2._0.NewDeviceUI"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_DMX_2._0"
+        mc:Ignorable="d"
+        Title="Add new DMX device" Height="450" Width="800">
+    <Grid>
+        <Button Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="123,62,0,0" VerticalAlignment="Top" Width="315" Height="80" Click="BtnCreate_Click"/>
+        <Button Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="123,160,0,0" VerticalAlignment="Top" Width="315" Height="80" Click="BtnCancel_Click"/>
+        <ComboBox Name="cbxDeviceType" HorizontalAlignment="Left" Margin="586,85,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="tbxName" HorizontalAlignment="Left" Height="23" Margin="244,304,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="tbxStart" HorizontalAlignment="Left" Height="23" Margin="244,332,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>

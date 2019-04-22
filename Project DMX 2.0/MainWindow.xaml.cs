@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DMX;
+using Logging;
+using Project_DMX_2._0.Event_Args;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,8 +15,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DMX;
-using DMX.Entities.Enumerations;
 
 namespace Project_DMX_2._0
 {
@@ -22,13 +23,37 @@ namespace Project_DMX_2._0
     /// </summary>
     public partial class MainWindow : Window
     {
+        Logger logger;
+        public List<DmxDevice> _dmxDevices;
+        NewDeviceUI newDeviceUI;
+
         public MainWindow()
         {
             InitializeComponent();
-            //DmxDevice dmxDevice = new DmxDevice(1, "test");
-            //dmxDevice.Name = "a";
-            //dmxDevice.StartAddress = 1;
-            //dmxDevice.Channels = new byte[] { 1, 2 };
+            logger = Logger.GetLogger;
+            logger.Log("Initialized application at " + DateTime.Now.ToString());
+        }
+
+        private void NewDeviceUI_NewDmxDevice(object sender, NewDmxDeviceEventArgs e)
+        {
+            newDeviceUI = null;
+            _dmxDevices.Add(e.DmxDevice);
+            logger.Log("New DmxDevice added: " + e.DmxDevice.Name + " @ " + e.DmxDevice.StartAddress);
+        }
+
+        private void BtnNewDevice_Click(object sender, RoutedEventArgs e)
+        {
+            newDeviceUI = new NewDeviceUI();
+            newDeviceUI.NewDmxDevice += new EventHandler<NewDmxDeviceEventArgs>(NewDeviceUI_NewDmxDevice);
+            newDeviceUI.Show();
+        }
+
+        private void Main_Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (newDeviceUI != null)
+                newDeviceUI.Close();
+            logger.Warn("Closing application.....");
+            logger = null;
         }
     }
 }

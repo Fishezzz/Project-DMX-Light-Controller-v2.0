@@ -24,7 +24,5 @@ namespace DMX
 
         private readonly DmxDeviceTypes deviceType;
         public DmxDeviceTypes DeviceType { get; }
-
-        public abstract byte[] Channels { get; }
     }
 }

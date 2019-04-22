@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_DMX_2._0"
         mc:Ignorable="d"
-        Title="DMX Controller v2.0" Height="450" Width="800">
+        Title="DMX Controller v2.0" Height="450" Width="800"
+        Name="Main_Window" Closing="Main_Window_Closing">
     <Grid>
-        
+        <Button Name="btnNewDevice" Content="New Device" HorizontalAlignment="Left" Margin="167,165,0,0" VerticalAlignment="Top" Width="315" Height="80" Click="BtnNewDevice_Click"/>
     </Grid>
 </Window>

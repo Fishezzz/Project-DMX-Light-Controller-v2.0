@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project DMX 2.0", "Project 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMX", "DMX\DMX.csproj", "{33300ADD-2543-4266-81B4-ACCEA126872F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csproj", "{8FF4FA15-CC0E-46D8-84F9-1B5A3BBF6F14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{33300ADD-2543-4266-81B4-ACCEA126872F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33300ADD-2543-4266-81B4-ACCEA126872F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33300ADD-2543-4266-81B4-ACCEA126872F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FF4FA15-CC0E-46D8-84F9-1B5A3BBF6F14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FF4FA15-CC0E-46D8-84F9-1B5A3BBF6F14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FF4FA15-CC0E-46D8-84F9-1B5A3BBF6F14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FF4FA15-CC0E-46D8-84F9-1B5A3BBF6F14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

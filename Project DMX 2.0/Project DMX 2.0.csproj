@@ -7,7 +7,7 @@
     <ProjectGuid>{87216066-5041-40A3-AC83-1818D2226FB8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Project_DMX_2._0</RootNamespace>
-    <AssemblyName>Project DMX 2.0</AssemblyName>
+    <AssemblyName>Project_DMX_2._0</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -63,12 +63,21 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Exceptions\UnknownDeviceTypeException.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NewDeviceUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NewDeviceUI.xaml.cs">
+      <DependentUpon>NewDeviceUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EventArgs\NewDmxDeviceEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -118,6 +127,10 @@
     <ProjectReference Include="..\DMX\DMX.csproj">
       <Project>{33300add-2543-4266-81b4-accea126872f}</Project>
       <Name>DMX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logger\Logger.csproj">
+      <Project>{8ff4fa15-cc0e-46d8-84f9-1b5a3bbf6f14}</Project>
+      <Name>Logger</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
