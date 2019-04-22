@@ -1,0 +1,23 @@
+language: csharp
+solution: Project-DMX-2.0.sln
+mono: 3.12.0
+dotnet: 4.7.2
+git:
+    depth: false
+    quiet: true
+install:
+    - nuget restore Project-DMX-2.0.sln
+    - nuget install NUnit.Console -Version 3.9.0 -OutputDirectory testrunner
+script:
+    - dotnet restore
+    - dotnet test
+    - msbuild /p:Configuration=Debug Project-DMX-2.0.sln
+    - mono ./testrunner/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe ./DMX/bin/Debug/DMX.dll
+    - mono ./testrunner/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe ./Logger/bin/Debug/Logger.dll
+deploy:
+    provider: pages
+    skip_cleanup: true
+    githhub_token: $GITHUB_TOKEN
+    keep_history: true
+    on:
+        branch: TravisCI-Test
