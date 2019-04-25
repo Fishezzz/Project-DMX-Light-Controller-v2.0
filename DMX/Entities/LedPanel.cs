@@ -24,5 +24,17 @@ namespace DMX.Entities
         {
             System.Diagnostics.Process.Start(@"Datasheets\Euro lite - LED Pixel Panel 16 DMX.pdf");
         }
+
+        public void UpdateChannel(int channelNumber, byte value)
+        {
+            if (channelNumber >= 0 && channelNumber < channels.Count())
+                channels[channelNumber] = value;
+        }
+        public void UpdateChannel(byte[] values)
+        {
+            if (values.Count() == NUMBER_OF_CHANNELS)
+                channels = values;
+        }
+
     }
 }
