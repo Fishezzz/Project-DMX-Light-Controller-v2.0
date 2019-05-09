@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace Logging
 {
@@ -43,10 +44,12 @@ namespace Logging
                 // If no instance of logger exists, make a new unique instance
                 if (getLogger == null)
                 {
+                    if (!Directory.Exists(Environment.CurrentDirectory + "\\Logs"))
+                        Directory.CreateDirectory(Environment.CurrentDirectory + "\\Logs");
                     // Take current DateTime for filename
                     DateTime dt = DateTime.Now;
                     // Initialize StreamWriter for writing to log file
-                    writer = new System.IO.StreamWriter($"Logs\\{dt.Year.ToString().PadLeft(4,'0')}{dt.Month.ToString().PadLeft(2, '0')}{dt.Day.ToString().PadLeft(2, '0')}_{dt.Hour.ToString().PadLeft(2, '0')}{dt.Minute.ToString().PadLeft(2, '0')}{dt.Second.ToString().PadLeft(2, '0')}.txt");
+                    writer = new System.IO.StreamWriter($"{Environment.CurrentDirectory}\\Logs\\{dt.Year.ToString().PadLeft(4,'0')}{dt.Month.ToString().PadLeft(2, '0')}{dt.Day.ToString().PadLeft(2, '0')}_{dt.Hour.ToString().PadLeft(2, '0')}{dt.Minute.ToString().PadLeft(2, '0')}{dt.Second.ToString().PadLeft(2, '0')}.txt");
                     // Creating unique Logger object
                     getLogger = new Logger();
                 }
