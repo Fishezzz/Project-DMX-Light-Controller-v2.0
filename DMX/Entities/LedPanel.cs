@@ -30,11 +30,16 @@ namespace DMX.Entities
             if (channelNumber >= 0 && channelNumber < channels.Count())
                 channels[channelNumber] = value;
         }
+
         public void UpdateChannel(byte[] values)
         {
             if (values.Count() == NUMBER_OF_CHANNELS)
                 channels = values;
         }
 
+        public byte[] GetLedRGB(int ledNumber)
+        {
+            return new byte[3] { channels[3 * ledNumber], channels[(3 * ledNumber) + 1], channels[(3 * ledNumber) + 2] };
+        }
     }
 }

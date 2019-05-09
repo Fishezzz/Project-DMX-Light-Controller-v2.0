@@ -33,6 +33,7 @@ namespace DMX.Entities
             if (channelNumber >= 0 && channelNumber < channels.Count())
                 channels[channelNumber] = value;
         }
+
         public void UpdateChannel(byte[] values)
         {
             if (values.Count() == NUMBER_OF_CHANNELS)
@@ -40,29 +41,29 @@ namespace DMX.Entities
         }
 
         // CH1 + CH2
-        public double GetRotationX()
+        public string GetRotationX()
         {
-            return MAX_X_ROTATION * (int)((channels[0] << 4) + channels[1]) * DEGREES_PER_BYTE;
+            return string.Format("X: {0:F2}°", MAX_X_ROTATION * ((channels[0] << 4) + channels[1]) * DEGREES_PER_BYTE);
         }
         // CH3 + CH4
-        public double GetRotationY()
+        public string GetRotationY()
         {
-            return MAX_Y_ROTATION * (int)((channels[2] << 4) + channels[3]) * DEGREES_PER_BYTE;
+            return string.Format("Y: {0:F2}°", MAX_Y_ROTATION * ((channels[2] << 4) + channels[3]) * DEGREES_PER_BYTE);
         }
         // CH5
-        public double GetAxisSpeed()
+        public string GetAxisSpeed()
         {
-            return 100.0 * (int)channels[4] / 256;
+            return string.Format("Speed: {0:F2}%", 100.0 * channels[4] / 256);
         }
         // CH6
         public string GetShutterStatus()
         {
-            if (channels[5] <= 7)
+            if (channels[5] >= 0 && channels[5] <= 7)
                 return "Shutter closesd";
             else if (channels[5] <= 134)
-                return "Shutter open"; /* $"Shutter {100.0 * (channels[5] - 7) / 127:D2}% open";   // 134-7=127 */
+                return string.Format("Shutter {0:F2}% open", 100.0 * (channels[5] - 7) / 127);  // 134-7=127
             else if (channels[5] <= 238)
-                return $"Strobe speed {100.0 * (channels[5] - 134) / 104:D2}%";  // 238-134=104
+                return string.Format("Strobe speed {0:F2}%", 100.0 * (channels[5] - 134) / 104);    // 238-134=104
             else if (channels[5] <= 255)
                 return $"Shutter open";
             return "??";
