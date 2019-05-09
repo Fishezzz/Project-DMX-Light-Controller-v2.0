@@ -18,7 +18,7 @@ namespace DMX.Tabs
     /// <summary>
     /// Interaction logic for TabLedScanner.xaml
     /// </summary>
-    public partial class TabLedScanner : TabControl
+    public partial class TabLedScanner : TabItem
     {
         public TabLedScanner()
         {

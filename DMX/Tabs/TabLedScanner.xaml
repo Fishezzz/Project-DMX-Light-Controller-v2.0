@@ -1,14 +1,15 @@
-﻿<TabControl x:Class="DMX.Tabs.TabLedScanner"
+﻿<TabItem x:Class="DMX.Tabs.TabLedScanner"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:local="clr-namespace:DMX.Tabs"
         mc:Ignorable="d" 
-        d:DesignHeight="370" d:DesignWidth="776">
-    <TabItem Header="Ayra LED Scanner">
-        <Grid Background="#FFE5E5E5">
-            <Button Content="Button" HorizontalAlignment="Left" Height="100" Margin="253,174,-253,-274" VerticalAlignment="Top" Width="100"/>
-        </Grid>
-    </TabItem>
-</TabControl>
+        d:DesignHeight="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualHeight}"
+        d:DesignWidth="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualWidth}">
+    <!--Header="Ayra LED Scanner">-->
+    <Grid Background="#FFE5E5E5">
+        <Button Content="Button" Height="50" Width="50" Margin="0"/>
+    </Grid>
+</TabItem>
+

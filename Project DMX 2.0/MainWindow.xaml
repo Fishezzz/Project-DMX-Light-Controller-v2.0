@@ -8,6 +8,7 @@
         Title="DMX Controller v2.0" Height="450" Width="800"
         MinHeight="150" MinWidth="300"
         Name="Main_Window" Closing="Main_Window_Closing">
+    <!--AllowsTransparency="True" WindowStyle="None" Background="Transparent">-->
     <Grid>
         <DockPanel Height="20" VerticalAlignment="Top">
             <Menu DockPanel.Dock="Top" Height="20">
@@ -29,8 +30,8 @@
             </Menu>
         </DockPanel>
 
-        <DockPanel Name="dpnDeviceTabs" Margin="0,20">
-            <TabControl Name="tctDeviceTabs" HorizontalAlignment="Left" Width="{Binding ActualWidth, ElementName=dpnDeviceTabs}">
+        <DockPanel Margin="0,20">
+            <TabControl Name="tctDeviceTabs" HorizontalAlignment="Left" Width="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualWidth}">
                 <TabItem Header="TabItem">
                     <Grid Background="#FFE5E5E5"/>
                 </TabItem>
@@ -41,7 +42,7 @@
         </DockPanel>
 
         <DockPanel Height="20" VerticalAlignment="Bottom">
-            <StatusBar Width="{Binding Width, ElementName=Main_Window}">
+            <StatusBar Width="{Binding ActualWidth, ElementName=Main_Window}">
                 <StatusBarItem VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="5,0">COM Port:</StatusBarItem>
                 <StatusBarItem VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="0" Width="50" Name="sbiCOM"></StatusBarItem>
                 <Separator/>
