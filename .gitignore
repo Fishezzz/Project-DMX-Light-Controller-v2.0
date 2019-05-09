@@ -261,3 +261,4 @@ __pycache__/
 *.pyc
 
 /codealike.json
+/Project\ DMX\ 2.0/bin/Debug/Logs/*

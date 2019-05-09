@@ -6,8 +6,48 @@
         xmlns:local="clr-namespace:Project_DMX_2._0"
         mc:Ignorable="d"
         Title="DMX Controller v2.0" Height="450" Width="800"
+        MinHeight="150" MinWidth="300"
         Name="Main_Window" Closing="Main_Window_Closing">
     <Grid>
-        <Button Name="btnNewDevice" Content="New Device" HorizontalAlignment="Left" Margin="167,165,0,0" VerticalAlignment="Top" Width="315" Height="80" Click="BtnNewDevice_Click"/>
+        <DockPanel Height="20" VerticalAlignment="Top">
+            <Menu DockPanel.Dock="Top" Height="20">
+                <MenuItem Header="_Settings"/>
+                <MenuItem Header="_Add Device" Click="NewDevice_Click"/>
+                <!--<MenuItem Header="_File">
+                    <MenuItem Header="_Exit">
+                        <MenuItem.Icon>
+                            <Image Source="close.ico"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="_Edit">
+                    <MenuItem Header="Edit _Users"/>
+                    <MenuItem Header="Edit _Clans"/>
+                </MenuItem>
+                <MenuItem Header="_Reload Files"/>
+                <MenuItem Header="_Update Image"/>-->
+            </Menu>
+        </DockPanel>
+
+        <DockPanel Name="dpnDeviceTabs" Margin="0,20">
+            <TabControl Name="tctDeviceTabs" HorizontalAlignment="Left" Width="{Binding ActualWidth, ElementName=dpnDeviceTabs}">
+                <TabItem Header="TabItem">
+                    <Grid Background="#FFE5E5E5"/>
+                </TabItem>
+                <TabItem Header="TabItem">
+                    <Grid Background="#FFE5E5E5"/>
+                </TabItem>
+            </TabControl>
+        </DockPanel>
+
+        <DockPanel Height="20" VerticalAlignment="Bottom">
+            <StatusBar Width="{Binding Width, ElementName=Main_Window}">
+                <StatusBarItem VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="5,0">COM Port:</StatusBarItem>
+                <StatusBarItem VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="0" Width="50" Name="sbiCOM"></StatusBarItem>
+                <Separator/>
+                <StatusBarItem VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="5,0">Start address:</StatusBarItem>
+                <StatusBarItem VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="0" Width="20" Name="sbiStartAddress"></StatusBarItem>
+            </StatusBar>
+        </DockPanel>
     </Grid>
 </Window>

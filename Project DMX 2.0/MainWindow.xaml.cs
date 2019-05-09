@@ -1,4 +1,5 @@
 ﻿using DMX;
+using DMX.Tabs;
 using Logging;
 using Project_DMX_2._0.Event_Args;
 using System;
@@ -32,6 +33,8 @@ namespace Project_DMX_2._0
             InitializeComponent();
             logger = Logger.GetLogger;
             logger.Log("Initialized application at " + DateTime.Now.ToString());
+            TabLedScanner ledScannerTab = new TabLedScanner();
+            tctDeviceTabs.Items.Add(ledScannerTab);
         }
 
         private void NewDeviceUI_NewDmxDevice(object sender, NewDmxDeviceEventArgs e)
@@ -41,7 +44,7 @@ namespace Project_DMX_2._0
             logger.Log("New DmxDevice added: " + e.DmxDevice.Name + " @ " + e.DmxDevice.StartAddress);
         }
 
-        private void BtnNewDevice_Click(object sender, RoutedEventArgs e)
+        private void NewDevice_Click(object sender, RoutedEventArgs e)
         {
             newDeviceUI = new NewDeviceUI();
             newDeviceUI.NewDmxDevice += new EventHandler<NewDmxDeviceEventArgs>(NewDeviceUI_NewDmxDevice);
