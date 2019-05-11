@@ -1,4 +1,6 @@
 ﻿using DMX;
+using DMX.Entities;
+using DMX.Entities.Enumerations;
 using DMX.Tabs;
 using Logging;
 using Project_DMX_2._0.Event_Args;
@@ -33,8 +35,11 @@ namespace Project_DMX_2._0
             InitializeComponent();
             logger = Logger.GetLogger;
             logger.Log("Initialized application at " + DateTime.Now.ToString());
-            TabLedScanner ledScannerTab = new TabLedScanner();
-            tctDeviceTabs.Items.Add(ledScannerTab);
+            TabLedScanner tabLedScanner = new TabLedScanner();
+            tctDeviceTabs.Items.Add(tabLedScanner);
+            LaserMovinghead laserMovinghead = new LaserMovinghead("test", 120, DmxDeviceTypes.Ayra_LedLaserMovinghead);
+            TabLaserMovinghead tabLaserMovinghead = new TabLaserMovinghead(laserMovinghead);
+            tctDeviceTabs.Items.Add(tabLaserMovinghead);
         }
 
         private void NewDeviceUI_NewDmxDevice(object sender, NewDmxDeviceEventArgs e)

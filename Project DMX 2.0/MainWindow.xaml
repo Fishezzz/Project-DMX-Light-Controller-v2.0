@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_DMX_2._0"
         mc:Ignorable="d"
-        Title="DMX Controller v2.0" Height="450" Width="800"
-        MinHeight="150" MinWidth="300"
+        Title="DMX Controller v2.0" Height="465" Width="600"
+        MinHeight="200" MinWidth="300"
         Name="Main_Window" Closing="Main_Window_Closing">
     <!--AllowsTransparency="True" WindowStyle="None" Background="Transparent">-->
     <Grid>

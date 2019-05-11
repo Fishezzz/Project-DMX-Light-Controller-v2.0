@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DMX.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace DMX.Tabs
     /// </summary>
     public partial class TabLedScanner : TabItem
     {
-        public TabLedScanner()
+        LedScanner _ledScanner;
+
+        public TabLedScanner(LedScanner ledScanner)
         {
             InitializeComponent();
+            this.DataContext = _ledScanner = ledScanner;
         }
     }
 }

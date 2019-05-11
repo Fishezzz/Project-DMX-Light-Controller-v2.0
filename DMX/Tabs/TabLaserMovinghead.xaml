@@ -6,9 +6,52 @@
         xmlns:local="clr-namespace:DMX.Tabs"
         mc:Ignorable="d" 
         d:DesignHeight="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualHeight}"
-        d:DesignWidth="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualWidth}">
-    <!--Header="Ayra Laser Movinghead">-->
+        d:DesignWidth="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualWidth}"
+        Header="Ayra Laser Movinghead">
     <Grid Background="#FFE5E5E5">
-
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Margin="5" Width="50">
+                            <TextBlock TextAlignment="Center" Padding="10" FontSize="10" TextWrapping="Wrap" Height="40" Text="X axis"/>
+                        <Slider Name="sldrChannel1" Maximum="255" Width="20" Height="255" Orientation="Vertical" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True" ValueChanged="SldrRotationX_ValueChanged"/>
+                    </StackPanel>
+                    <StackPanel Margin="5" Width="50">
+                        <TextBlock TextAlignment="Center" Padding="5" FontSize="10" TextWrapping="Wrap" Height="40" Text="X axis fine"/>
+                        <Slider Name="sldrChannel2" Maximum="255" Width="20" Height="255" Orientation="Vertical" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True" ValueChanged="SldrRotationX_ValueChanged"/>
+                    </StackPanel>
+                    <StackPanel Margin="5" Width="50">
+                            <TextBlock TextAlignment="Center" Padding="10" FontSize="10" TextWrapping="Wrap" Height="40" Text="Y axis"/>
+                        <Slider Name="sldrChannel3" Maximum="255" Width="20" Height="255" Orientation="Vertical" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True" ValueChanged="SldrRotationY_ValueChanged"/>
+                    </StackPanel>
+                    <StackPanel Margin="5" Width="50">
+                        <TextBlock TextAlignment="Center" Padding="5" FontSize="10" TextWrapping="Wrap" Height="40" Text="Y axis fine"/>
+                        <Slider Name="sldrChannel4" Maximum="255" Width="20" Height="255" Orientation="Vertical" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True" ValueChanged="SldrRotationY_ValueChanged"/>
+                    </StackPanel>
+                    <StackPanel Margin="5" Width="50">
+                        <TextBlock TextAlignment="Center" Padding="5" FontSize="10" TextWrapping="Wrap" Height="40" Text="Axis speed"/>
+                        <Slider Name="sldrChannel5" Maximum="255" Width="20" Height="255" Orientation="Vertical" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True" ValueChanged="SldrAxisSpeed_ValueChanged"/>
+                    </StackPanel>
+                    <StackPanel Margin="5" Width="50">
+                        <TextBlock TextAlignment="Center" Padding="5" FontSize="10" TextWrapping="Wrap" Height="40" Text="Shutter &amp; Strobe"/>
+                        <Slider Name="sldrChannel6" Maximum="255" Width="20" Height="255" Orientation="Vertical" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True" ValueChanged="SldrShutterStatus_ValueChanged"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <GroupBox Header="X" Margin="5,0,5,5">
+                        <TextBlock TextAlignment="Center" Padding="5" FontSize="10" Width="50" TextWrapping="Wrap" Text="{Binding RotationX}"/>
+                    </GroupBox>
+                    <GroupBox Header="Y" Margin="5,0,5,5">
+                        <TextBlock TextAlignment="Center" Padding="5" FontSize="10" Width="50" TextWrapping="Wrap" Text="{Binding RotationY}"/>
+                    </GroupBox>
+                    <GroupBox Header="Speed" Margin="5,0,5,5">
+                        <TextBlock TextAlignment="Center" Padding="5" FontSize="10" Width="50" TextWrapping="Wrap" Text="{Binding AxisSpeed}"/>
+                    </GroupBox>
+                    <GroupBox Header="Strobe &amp; Shutter" Margin="5,0,5,5">
+                        <TextBlock TextAlignment="Center" Padding="5" FontSize="10" Width="125" TextWrapping="Wrap" Text="{Binding ShutterStatus}"/>
+                    </GroupBox>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </TabItem>
