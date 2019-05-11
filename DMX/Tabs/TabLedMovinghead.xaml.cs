@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DMX.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,32 @@ namespace DMX.Tabs
     /// </summary>
     public partial class TabLedMovinghead : TabItem
     {
-        public TabLedMovinghead()
+        LedMovinghead _ledMovinghead;
+
+        public TabLedMovinghead(LedMovinghead ledMovinghead)
         {
             InitializeComponent();
+            this.DataContext = _ledMovinghead = ledMovinghead;
+        }
+
+        private void SldrRotationX_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            _ledMovinghead.UpdateRotationX((byte)sldrChannel1.Value, (byte)sldrChannel2.Value);
+        }
+
+        private void SldrRotationY_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            _ledMovinghead.UpdateRotationY((byte)sldrChannel3.Value, (byte)sldrChannel4.Value);
+        }
+
+        private void SldrAxisSpeed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            _ledMovinghead.UpdateAxisSpeed((byte)sldrChannel5.Value);
+        }
+
+        private void SldrShutterStatus_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            _ledMovinghead.UpdateShutterStatus((byte)sldrChannel6.Value);
         }
     }
 }

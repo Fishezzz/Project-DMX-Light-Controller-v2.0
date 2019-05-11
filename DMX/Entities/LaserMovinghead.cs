@@ -85,18 +85,18 @@ namespace DMX.Entities
         }
 
         // CH1 + CH2
-        public void UpdateRotationX(byte X, byte X_fine)
+        public void UpdateRotationX(byte? X, byte? X_fine)
         {
-            channels[0] = X;
-            channels[1] = X_fine;
+            channels[0] = X ?? 0;
+            channels[1] = X_fine ?? 0;
             RotationX = string.Format("{0:F2}°", MAX_X_ROTATION * (((int)channels[0] << 8) + (int)channels[1]) / DEGREES_PER_BYTE);
         }
 
         // CH3 + CH4
-        public void UpdateRotationY(byte Y, byte Y_fine)
+        public void UpdateRotationY(byte? Y, byte? Y_fine)
         {
-            channels[2] = Y;
-            channels[3] = Y_fine;
+            channels[2] = Y ?? 0;
+            channels[3] = Y_fine ?? 0;
             RotationY = string.Format("{0:F2}°", MAX_Y_ROTATION * (((int)channels[2] << 8) + (int)channels[3]) / DEGREES_PER_BYTE);
         }
 
@@ -111,6 +111,7 @@ namespace DMX.Entities
         public void UpdateShutterStatus(byte? status)
         {
             channels[5] = status ?? 0;
+
             if (channels[5] >= 0 && channels[5] <= 7)
                 ShutterStatus = "Shutter closed";
             else if (channels[5] <= 134)
