@@ -4,10 +4,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:local="clr-namespace:DMX.Tabs"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d" 
         d:DesignHeight="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualHeight}"
-        d:DesignWidth="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualWidth}"
-        Header="Skytec LED Movinghead">
+        d:DesignWidth="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualWidth}">
+    <!--Header="Skytec LED Movinghead">-->
     <Grid Background="#FFE5E5E5">
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
             <StackPanel Orientation="Horizontal">
@@ -43,7 +44,7 @@
                 </StackPanel>
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <StackPanel Margin="5,0">
+                        <StackPanel Margin="5,0" Width="60">
                             <TextBlock TextAlignment="Center" Padding="0,10" FontSize="10" TextWrapping="Wrap" Height="40" Text="Axis speed"/>
                             <Slider Name="sldrChannel5" Maximum="255" Width="20" Height="255" Orientation="Vertical" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True" ValueChanged="SldrAxisSpeed_ValueChanged"/>
                         </StackPanel>
@@ -54,9 +55,21 @@
                 </StackPanel>
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <StackPanel Margin="5,0">
-                            <TextBlock TextAlignment="Center" Padding="0,10" FontSize="10" TextWrapping="Wrap" Height="40" Text="Shutter &amp; Strobe"/>
+                        <StackPanel Margin="5,0" Width="45">
+                            <TextBlock TextAlignment="Center" Padding="0,5" FontSize="10" TextWrapping="Wrap" Height="40" Text="Shutter &amp; Strobe"/>
                             <Slider Name="sldrChannel6" Maximum="255" Width="20" Height="255" Orientation="Vertical" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True" ValueChanged="SldrShutterStatus_ValueChanged"/>
+                        </StackPanel>
+                        <StackPanel Margin="5,0" Width="65">
+                            <TextBlock TextAlignment="Center" Padding="0,10" FontSize="10" TextWrapping="Wrap" Height="40" Text="RGB Color"/>
+                            <TextBlock TextAlignment="Center" Padding="5,5,5,0" Height="20" Text="Red"/>
+                            <xctk:ByteUpDown Name="budChannel7" CultureInfo="nl-BE" DefaultValue="0" Text="0" ValueChanged="BudRGB_ValueChanged"/>
+                            <TextBlock TextAlignment="Center" Padding="5,5,5,0" Height="20" Text="Green"/>
+                            <xctk:ByteUpDown Name="budChannel8" CultureInfo="nl-BE" DefaultValue="0" Text="0" ValueChanged="BudRGB_ValueChanged"/>
+                            <TextBlock TextAlignment="Center" Padding="5,5,5,0" Height="20" Text="Blue"/>
+                            <xctk:ByteUpDown Name="budChannel9" CultureInfo="nl-BE" DefaultValue="0" Text="0" ValueChanged="BudRGB_ValueChanged"/>
+                            <GroupBox Header="Color" Margin="0,15,0,0">
+                                <TextBlock TextAlignment="Center" Padding="0,5" FontSize="12" TextWrapping="Wrap" Text="{Binding RGBColor}"/>
+                            </GroupBox>
                         </StackPanel>
                     </StackPanel>
                     <GroupBox Header="Shutter &amp; Strobe" Margin="5">
@@ -64,7 +77,26 @@
                     </GroupBox> 
                 </StackPanel>
                 <StackPanel>
-                    
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Margin="5,0" Width="60">
+                            <TextBlock TextAlignment="Center" Padding="0,10" FontSize="10" TextWrapping="Wrap" Height="40" Text="LED speed"/>
+                            <Slider Name="sldrChannel11" Maximum="255" Width="20" Height="255" Orientation="Vertical" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True" ValueChanged="SldrAxisSpeed_ValueChanged"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <GroupBox Header="Speed" Margin="5">
+                        <TextBlock TextAlignment="Center" Padding="5" FontSize="10" Width="50" TextWrapping="Wrap" Text="{Binding AxisSpeed}"/>
+                    </GroupBox>
+                </StackPanel>
+                <StackPanel>
+                    <StackPanel>
+                        
+                    </StackPanel>
+                    <StackPanel>
+                        
+                    </StackPanel>
+                    <StackPanel>
+                        
+                    </StackPanel>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>

@@ -56,7 +56,7 @@ namespace Project_DMX_2._0
         {
             newDeviceUI = new NewDeviceUI();
             newDeviceUI.NewDmxDevice += new EventHandler<NewDmxDeviceEventArgs>(NewDeviceUI_NewDmxDevice);
-            newDeviceUI.Show();
+            newDeviceUI.ShowDialog();
         }
 
         private void Main_Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

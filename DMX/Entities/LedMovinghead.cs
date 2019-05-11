@@ -149,7 +149,7 @@ namespace DMX.Entities
         }
 
         // CH7 + CH8 + CH9
-        public void GetRGB(byte? R, byte? G, byte? B)
+        public void UpdateRGB(byte? R, byte? G, byte? B)
         {
             channels[6] = R ?? 0;
             channels[7] = G ?? 0;
@@ -159,7 +159,7 @@ namespace DMX.Entities
         }
 
         // CH11
-        public void GetLedSpeed(byte? speed)
+        public void UpdateLedSpeed(byte? speed)
         {
             channels[10] = speed ?? 0;
 
