@@ -35,11 +35,13 @@ namespace Project_DMX_2._0
             InitializeComponent();
             logger = Logger.GetLogger;
             logger.Log("Initialized application at " + DateTime.Now.ToString());
-            TabLedScanner tabLedScanner = new TabLedScanner();
+
+            TabLedScanner tabLedScanner = new TabLedScanner(new LedScanner("test", 120, DmxDeviceTypes.Ayra_LedScanner));
             tctDeviceTabs.Items.Add(tabLedScanner);
-            LaserMovinghead laserMovinghead = new LaserMovinghead("test", 120, DmxDeviceTypes.Ayra_LedLaserMovinghead);
-            TabLaserMovinghead tabLaserMovinghead = new TabLaserMovinghead(laserMovinghead);
+            logger.Log("tabLedScanner added to tctDeviceTabs in MainWindow");
+            TabLaserMovinghead tabLaserMovinghead = new TabLaserMovinghead(new LaserMovinghead("test", 120, DmxDeviceTypes.Ayra_LedLaserMovinghead));
             tctDeviceTabs.Items.Add(tabLaserMovinghead);
+            logger.Log("tabLaserMovinghead added to tctDeviceTabs in MainWindow");
         }
 
         private void NewDeviceUI_NewDmxDevice(object sender, NewDmxDeviceEventArgs e)
