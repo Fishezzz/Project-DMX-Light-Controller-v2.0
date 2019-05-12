@@ -57,5 +57,10 @@ namespace DMX.Tabs
         // Kleuren CH10 => byte = SelectedIndex * 14;
         // Auto programma's CH12 => byte = SelectedIndex * 15;
         // Gobo's CH13 => byte = SelectedIndex * 14; if(SelectedIndex == 11 || SelectedIndex == Items.Last()) { byte = 200; }
+
+        private void rb_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

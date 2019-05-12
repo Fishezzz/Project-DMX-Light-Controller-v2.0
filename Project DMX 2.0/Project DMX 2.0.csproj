@@ -96,32 +96,13 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
-    <None Include="Datasheets\D-series user manual %28lichtkrant%29.pdf" />
-    <None Include="Datasheets\Datasheet Laser - ERO Laser.pdf" />
-    <None Include="Datasheets\Datasheet LED PAR.pdf" />
-    <None Include="Datasheets\Datasheet LED Scanner - ALO60.pdf" />
-    <None Include="Datasheets\Dseries protocol 5.4 %28lichtkrant%29.pdf" />
-    <None Include="Datasheets\Euro lite - LED Pixel Panel 16 DMX.pdf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Datasheets\Skytec LED Movinghead.pdf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Gobo 1.PNG" />
-    <Resource Include="Images\Gobo 2.PNG" />
-    <Resource Include="Images\Gobo 3.PNG" />
-    <Resource Include="Images\Gobo 4.PNG" />
-    <Resource Include="Images\Gobo 5.PNG" />
-    <Resource Include="Images\Gobo 6.PNG" />
-    <Resource Include="Images\Gobo 7.PNG" />
-    <Resource Include="Images\Gobo 8.PNG" />
-    <Resource Include="Images\Gobo 9.PNG" />
-    <Resource Include="Images\Gobo Open.PNG" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DMX\DMX.csproj">
@@ -132,13 +113,6 @@
       <Project>{8ff4fa15-cc0e-46d8-84f9-1b5a3bbf6f14}</Project>
       <Name>Logger</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\LedLaser.png" />
-    <Resource Include="Images\LedMovinghead.png" />
-    <Resource Include="Images\LedPanel.png" />
-    <Resource Include="Images\LedPar56.png" />
-    <Resource Include="Images\LedScanner.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

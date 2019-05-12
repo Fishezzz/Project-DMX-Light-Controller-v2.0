@@ -1,58 +1,93 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="DMX.Entities.LedMovinghead">
-    <Position X="0.5" Y="4" Width="1.75" />
+    <Position X="0.5" Y="4" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAA=</HashCode>
+      <HashCode>AAAAAAAAAAAIgoABIAOAACCAgAAIAAABABwQgQAgEAA=</HashCode>
       <FileName>Entities\LedMovinghead.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="DMX.Entities.LedSpot">
-    <Position X="9.5" Y="4" Width="1.75" />
+    <Position X="10.5" Y="4" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAABgQAAAAEAA=</HashCode>
       <FileName>Entities\LedSpot.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DMX.Entities.LedPanel">
-    <Position X="7.25" Y="4" Width="1.75" />
+    <Position X="8" Y="4" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAA=</HashCode>
+      <HashCode>AAAAAAAAAABAAAAAAAAIAAAAAAAAAAAAABgQAAAAEAA=</HashCode>
       <FileName>Entities\LedPanel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DMX.Entities.LaserMovinghead">
-    <Position X="2.75" Y="4" Width="1.75" />
+    <Position X="3" Y="4" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAgoABIAOAAACAgAAAAAABABgQAQAgEAA=</HashCode>
       <FileName>Entities\LaserMovinghead.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="DMX.Entities.LedScanner">
-    <Position X="5" Y="4" Width="1.75" />
+    <Position X="5.5" Y="4" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAA=</HashCode>
+      <HashCode>IAAgAAAEAACAIAAAAAMIAAAAAAAAAAAAABgQAAAgEAA=</HashCode>
       <FileName>Entities\LedScanner.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DMX.DmxDevice">
-    <Position X="0.5" Y="0.5" Width="1.75" />
+    <Position X="0.5" Y="12" Width="2" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAAAAEAA=</HashCode>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DmxDevice.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="DMX.Entities.Enumerations.Devices">
-    <Position X="5" Y="0.5" Width="2.25" />
+  <Class Name="DMX.Tabs.TabLedMovinghead">
+    <Position X="3" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAABAAAACAAAAAAAAAAEgAAAAAAAAAAABAAAAAABA=</HashCode>
-      <FileName>Entities\Enumerations\Devices.cs</FileName>
+      <HashCode>ABAAAgAAAAAAAEAAAAAAAAAIAAACAAAAACAIAAAAAAA=</HashCode>
+      <FileName>Tabs\TabLedMovinghead.xaml.cs</FileName>
     </TypeIdentifier>
-  </Enum>
-  <Enum Name="DMX.Entities.Enumerations.DmxDeviceTypes">
-    <Position X="2.75" Y="0.5" Width="1.75" />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DMX.Tabs.TabLaserMovinghead">
+    <Position X="0.5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAgAAAAAAAAAAAAABAAAAAIAAEAAAAAAQABA=</HashCode>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAKAAACAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Tabs\TabLaserMovinghead.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DMX.Tabs.TabLedPanel" BaseTypeListCollapsed="true">
+    <Position X="8" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tabs\TabLedPanel.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DMX.Tabs.TabLedScanner" BaseTypeListCollapsed="true">
+    <Position X="5.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tabs\TabLedScanner.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DMX.Tabs.TabLedSpot" BaseTypeListCollapsed="true">
+    <Position X="10.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tabs\TabLedSpot.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Enum Name="DMX.Entities.Enumerations.DmxDeviceTypes">
+    <Position X="3" Y="12" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAABAAAAAIAAEAAAAAEQABA=</HashCode>
       <FileName>Entities\Enumerations\DmxDeviceTypes.cs</FileName>
     </TypeIdentifier>
   </Enum>

@@ -88,15 +88,90 @@
                     </GroupBox>
                 </StackPanel>
                 <StackPanel>
-                    <StackPanel>
-                        
-                    </StackPanel>
-                    <StackPanel>
-                        
-                    </StackPanel>
-                    <StackPanel>
-                        
-                    </StackPanel>
+                    <GroupBox Header="Pre-Set Colors" Margin="5" Width="160">
+                        <ScrollViewer Height="80">
+                            <StackPanel>
+                                <RadioButton Name="rbC10_1" Content="Gesloten" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC10_2" Content="Open / Wit" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC10_3" Content="Rood" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC10_4" Content="Groen" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC10_5" Content="UV" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC10_6" Content="Licht blauw" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC10_7" Content="Rose" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC10_8" Content="Geel" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC10_9" Content="Magenta" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC10_10" Content="Rood II" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC10_11" Content="Groen II" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC10_12" Content="Licht groen" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC10_13" Content="Paars" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC10_14" Content="Licht rose" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC10_15" Content="Licht groen II" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC10_16" Content="Licht blauw II" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC10_17" Content="Regenboog effect" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </GroupBox>
+                    <GroupBox Header="Auto Programs" Margin="5" Width="160">
+                        <ScrollViewer Height="80">
+                            <StackPanel>
+                                <RadioButton Name="rbC12_1" Content="Geen Functie" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC12_2" Content="Auto programma 1" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC12_3" Content="Auto programma 2" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC12_4" Content="Auto programma 3" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC12_5" Content="Auto programma 4" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC12_6" Content="Auto programma 5" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC12_7" Content="Auto programma 6" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC12_8" Content="Auto programma 7" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC12_9" Content="Auto programma 8" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC12_10" Content="Geluidsregeling 1" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC12_11" Content="Geluidsregeling 2" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC12_12" Content="Geluidsregeling 3" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC12_13" Content="Geluidsregeling 4" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC12_14" Content="Geluidsregeling 5" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC12_15" Content="Geluidsregeling 6" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC12_16" Content="Geluidsregeling 7" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC12_17" Content="Geluidsregeling 8" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </GroupBox>
+                    <GroupBox Header="Gobo's" Margin="5" Width="160">
+                        <ScrollViewer Height="95">
+                            <StackPanel>
+                                <RadioButton Name="rbC13_1" VerticalContentAlignment="Center" Checked="rb_Checked">
+                                    <Image Source="../Images/Gobo Open.PNG" Height="40" Width="50"/>
+                                </RadioButton>
+                                <RadioButton Name="rbC13_2" VerticalContentAlignment="Center" Checked="rb_Checked">
+                                    <Image Source="../Images/Gobo 1.PNG" Height="40" Width="50"/>
+                                </RadioButton>
+                                <RadioButton Name="rbC13_3" VerticalContentAlignment="Center" Checked="rb_Checked">
+                                    <Image Source="../Images/Gobo 2.PNG" Height="40" Width="50"/>
+                                </RadioButton>
+                                <RadioButton Name="rbC13_4" VerticalContentAlignment="Center" Checked="rb_Checked">
+                                    <Image Source="../Images/Gobo 3.PNG" Height="40" Width="50"/>
+                                </RadioButton>
+                                <RadioButton Name="rbC13_5" VerticalContentAlignment="Center" Checked="rb_Checked">
+                                    <Image Source="../Images/Gobo 4.PNG" Height="40" Width="50"/>
+                                </RadioButton>
+                                <RadioButton Name="rbC13_6" VerticalContentAlignment="Center" Checked="rb_Checked">
+                                    <Image Source="../Images/Gobo 5.PNG" Height="40" Width="50"/>
+                                </RadioButton>
+                                <RadioButton Name="rbC13_7" VerticalContentAlignment="Center" Checked="rb_Checked">
+                                    <Image Source="../Images/Gobo 6.PNG" Height="40" Width="50"/>
+                                </RadioButton>
+                                <RadioButton Name="rbC13_8" VerticalContentAlignment="Center" Checked="rb_Checked">
+                                    <Image Source="../Images/Gobo 7.PNG" Height="40" Width="50"/>
+                                </RadioButton>
+                                <RadioButton Name="rbC13_9" VerticalContentAlignment="Center" Checked="rb_Checked">
+                                    <Image Source="../Images/Gobo 8.PNG" Height="40" Width="50"/>
+                                </RadioButton>
+                                <RadioButton Name="rbC13_10" VerticalContentAlignment="Center" Checked="rb_Checked">
+                                    <Image Source="../Images/Gobo 9.PNG" Height="40" Width="50"/>
+                                </RadioButton>
+                                <RadioButton Name="rbC13_11" Content="Positieve Regenboog" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                                <RadioButton Name="rbC13_12" Content="Negatieve Regenboog" VerticalContentAlignment="Center" Checked="rb_Checked"/>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </GroupBox>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
