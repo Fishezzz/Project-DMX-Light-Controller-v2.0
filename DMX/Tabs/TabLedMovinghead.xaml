@@ -1,14 +1,13 @@
 ﻿<TabItem x:Class="DMX.Tabs.TabLedMovinghead"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-        xmlns:local="clr-namespace:DMX.Tabs"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
-        mc:Ignorable="d" 
+        mc:Ignorable="d"
         d:DesignHeight="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualHeight}"
-        d:DesignWidth="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualWidth}">
-    <!--Header="Skytec LED Movinghead">-->
+        d:DesignWidth="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualWidth}"
+        Header="Skytec LED Movinghead">
     <Grid Background="#FFEEEEEE">
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
             <StackPanel Orientation="Horizontal">
@@ -140,34 +139,34 @@
                         <ScrollViewer Height="320">
                             <StackPanel>
                                 <RadioButton Name="rbC13_1" VerticalContentAlignment="Center" Checked="rb_GobosChecked">
-                                    <Image Source="../Images/Gobo Open.PNG" Height="40" Width="50"/>
+                                    <Image Source="/DMX;component/Resources/Images/Gobo Open.PNG" Height="40" Width="50"/>
                                 </RadioButton>
                                 <RadioButton Name="rbC13_2" VerticalContentAlignment="Center" Checked="rb_GobosChecked">
-                                    <Image Source="../Images/Gobo 1.PNG" Height="40" Width="50"/>
+                                    <Image Source="/DMX;component/Resources/Images/Gobo 1.PNG" Height="40" Width="50"/>
                                 </RadioButton>
                                 <RadioButton Name="rbC13_3" VerticalContentAlignment="Center" Checked="rb_GobosChecked">
-                                    <Image Source="../Images/Gobo 2.PNG" Height="40" Width="50"/>
+                                    <Image Source="/DMX;component/Resources/Images/Gobo 2.PNG" Height="40" Width="50"/>
                                 </RadioButton>
                                 <RadioButton Name="rbC13_4" VerticalContentAlignment="Center" Checked="rb_GobosChecked">
-                                    <Image Source="../Images/Gobo 3.PNG" Height="40" Width="50"/>
+                                    <Image Source="/DMX;component/Resources/Images/Gobo 3.PNG" Height="40" Width="50"/>
                                 </RadioButton>
                                 <RadioButton Name="rbC13_5" VerticalContentAlignment="Center" Checked="rb_GobosChecked">
-                                    <Image Source="../Images/Gobo 4.PNG" Height="40" Width="50"/>
+                                    <Image Source="/DMX;component/Resources/Images/Gobo 4.PNG" Height="40" Width="50"/>
                                 </RadioButton>
                                 <RadioButton Name="rbC13_6" VerticalContentAlignment="Center" Checked="rb_GobosChecked">
-                                    <Image Source="../Images/Gobo 5.PNG" Height="40" Width="50"/>
+                                    <Image Source="/DMX;component/Resources/Images/Gobo 5.PNG" Height="40" Width="50"/>
                                 </RadioButton>
                                 <RadioButton Name="rbC13_7" VerticalContentAlignment="Center" Checked="rb_GobosChecked">
-                                    <Image Source="../Images/Gobo 6.PNG" Height="40" Width="50"/>
+                                    <Image Source="/DMX;component/Resources/Images/Gobo 6.PNG" Height="40" Width="50"/>
                                 </RadioButton>
                                 <RadioButton Name="rbC13_8" VerticalContentAlignment="Center" Checked="rb_GobosChecked">
-                                    <Image Source="../Images/Gobo 7.PNG" Height="40" Width="50"/>
+                                    <Image Source="/DMX;component/Resources/Images/Gobo 7.PNG" Height="40" Width="50"/>
                                 </RadioButton>
                                 <RadioButton Name="rbC13_9" VerticalContentAlignment="Center" Checked="rb_GobosChecked">
-                                    <Image Source="../Images/Gobo 8.PNG" Height="40" Width="50"/>
+                                    <Image Source="/DMX;component/Resources/Images/Gobo 8.PNG" Height="40" Width="50"/>
                                 </RadioButton>
                                 <RadioButton Name="rbC13_10" VerticalContentAlignment="Center" Checked="rb_GobosChecked">
-                                    <Image Source="../Images/Gobo 9.PNG" Height="40" Width="50"/>
+                                    <Image Source="/DMX;component/Resources/Images/Gobo 9.PNG" Height="40" Width="50"/>
                                 </RadioButton>
                                 <RadioButton Name="rbC13_11" Content="Positive&#xA;Rainbow" VerticalContentAlignment="Center" Checked="rb_GobosChecked"/>
                                 <RadioButton Name="rbC13_12" Content="Negative&#xA;Rainbow" VerticalContentAlignment="Center" Checked="rb_GobosChecked"/>

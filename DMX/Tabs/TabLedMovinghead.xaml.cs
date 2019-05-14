@@ -1,18 +1,7 @@
 ﻿using DMX.Entities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace DMX.Tabs
 {
@@ -29,53 +18,65 @@ namespace DMX.Tabs
             this.DataContext = _ledMovinghead = ledMovinghead;
         }
 
+        // CH1 + CH2
         private void SldrRotationX_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             _ledMovinghead.UpdateRotationX((byte)sldrChannel1.Value, (byte)sldrChannel2.Value);
         }
 
+        // CH3 + CH4
         private void SldrRotationY_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             _ledMovinghead.UpdateRotationY((byte)sldrChannel3.Value, (byte)sldrChannel4.Value);
         }
 
+        // CH5
         private void SldrAxisSpeed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             _ledMovinghead.UpdateAxisSpeed((byte)sldrChannel5.Value);
         }
 
+        // CH6
         private void SldrShutterStatus_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             _ledMovinghead.UpdateShutterStatus((byte)sldrChannel6.Value);
         }
 
+        // CH7 + CH8 + CH9
         private void BudRGB_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
             if (budChannel7 != null && budChannel8 != null && budChannel9 != null && _ledMovinghead != null)
                 _ledMovinghead.UpdateRGB(budChannel7.Value, budChannel8.Value, budChannel9.Value);
         }
 
+        // CH10
+        private void rb_ColorsChecked(object sender, RoutedEventArgs e)
+        {
+            int index = Convert.ToInt32(((RadioButton)sender).Name.Split('_')[1]);
+            _ledMovinghead.UpdatePreSetColor((byte)(index * 14));
+        }
+
+        // CH11
         private void SldrLedSpeed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             _ledMovinghead.UpdateLedSpeed((byte)sldrChannel11.Value);
         }
 
-        // Kleuren CH10 => byte = SelectedIndex * 14;
-        // Auto programma's CH12 => byte = SelectedIndex * 15;
-        // Gobo's CH13 => byte = SelectedIndex * 14; if(SelectedIndex == 11 || SelectedIndex == Items.Last()) { byte = 200; }
-        private void rb_ColorsChecked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
+        // CH12
         private void rb_ProgramsChecked(object sender, RoutedEventArgs e)
         {
-
+            int index = Convert.ToInt32(((RadioButton)sender).Name.Split('_')[1]);
+            _ledMovinghead.UpdateAutoProgram((byte)(index * 15));
         }
 
+        // CH13
         private void rb_GobosChecked(object sender, RoutedEventArgs e)
         {
-
+            int index = Convert.ToInt32(((RadioButton)sender).Name.Split('_')[1]);
+            if (index == 12)
+                _ledMovinghead.UpdateGobo((byte)200);
+            else
+                _ledMovinghead.UpdateGobo((byte)(index * 14));
         }
     }
 }

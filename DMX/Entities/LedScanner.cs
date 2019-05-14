@@ -23,11 +23,6 @@ namespace DMX.Entities
         private byte[] channels;
         public byte[] Channels { get; private set; }
 
-        public void OpenDatasheet()
-        {
-            System.Diagnostics.Process.Start(@"Datasheet LED Scanner - ALO60.pdf");
-        }
-
         public void UpdateChannel(int channelNumber, byte value)
         {
             if (channelNumber >= 0 && channelNumber < channels.Count())

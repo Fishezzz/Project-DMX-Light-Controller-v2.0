@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DMX.Entities.Enumerations;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DMX.Entities.Enumerations;
 
 namespace DMX.Entities
 {
@@ -122,11 +117,6 @@ namespace DMX.Entities
                 ShutterStatus = $"Shutter open";
             else
                 ShutterStatus = "??";
-        }
-
-        public void OpenDatasheet()
-        {
-            System.Diagnostics.Process.Start(@"Datasheets\Datasheet Laser - ERO Laser.pdf");
         }
     }
 }

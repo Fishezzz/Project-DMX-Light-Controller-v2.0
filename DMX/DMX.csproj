@@ -35,6 +35,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -56,6 +57,11 @@
     <Compile Include="Entities\LedSpot.cs" />
     <Compile Include="Entities\LedMovinghead.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\TabLaserMovinghead.xaml.cs">
       <DependentUpon>TabLaserMovinghead.xaml</DependentUpon>
     </Compile>
@@ -74,13 +80,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
-    <None Include="Datasheets\D-series user manual %28lichtkrant%29.pdf" />
-    <None Include="Datasheets\Datasheet Laser - ERO Laser.pdf" />
-    <None Include="Datasheets\Datasheet LED PAR.pdf" />
-    <None Include="Datasheets\Datasheet LED Scanner - ALO60.pdf" />
-    <None Include="Datasheets\Dseries protocol 5.4 %28lichtkrant%29.pdf" />
-    <None Include="Datasheets\Euro lite - LED Pixel Panel 16 DMX.pdf" />
-    <None Include="Datasheets\Skytec LED Movinghead.pdf" />
+    <Resource Include="Resources\Datasheets\D-series user manual %28lichtkrant%29.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Datasheets\Datasheet Laser - ERO Laser.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Datasheets\Datasheet LED PAR.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Datasheets\Datasheet LED Scanner - ALO60.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Datasheets\Dseries protocol 5.4 %28lichtkrant%29.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Datasheets\Euro lite - LED Pixel Panel 16 DMX.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Datasheets\Skytec LED Movinghead.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -106,51 +126,58 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Gobo 1.PNG">
+    <Resource Include="Resources\Images\Gobo 1.PNG">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\Gobo 2.PNG">
+    <Resource Include="Resources\Images\Gobo 2.PNG">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\Gobo 3.PNG">
+    <Resource Include="Resources\Images\Gobo 3.PNG">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\Gobo 4.PNG">
+    <Resource Include="Resources\Images\Gobo 4.PNG">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\Gobo 5.PNG">
+    <Resource Include="Resources\Images\Gobo 5.PNG">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\Gobo 6.PNG">
+    <Resource Include="Resources\Images\Gobo 6.PNG">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\Gobo 7.PNG">
+    <Resource Include="Resources\Images\Gobo 7.PNG">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\Gobo 8.PNG">
+    <Resource Include="Resources\Images\Gobo 8.PNG">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\Gobo 9.PNG">
+    <Resource Include="Resources\Images\Gobo 9.PNG">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\Gobo Open.PNG">
+    <Resource Include="Resources\Images\Gobo Open.PNG">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\LedLaser.png">
+    <Resource Include="Resources\Images\LedLaser.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\LedMovinghead.png">
+    <Resource Include="Resources\Images\LedMovinghead.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\LedPanel.png">
+    <Resource Include="Resources\Images\LedPanel.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\LedPar56.png">
+    <Resource Include="Resources\Images\LedPar56.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\LedScanner.png">
+    <Resource Include="Resources\Images\LedScanner.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

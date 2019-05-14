@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DMX.Entities.Enumerations;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DMX.Entities.Enumerations;
 
 namespace DMX.Entities
 {
@@ -158,6 +153,12 @@ namespace DMX.Entities
             RGBColor = string.Format("#{0:X2}{1:X2}{2:X2}", channels[6], channels[7], channels[8]);
         }
 
+        // CH10
+        public void UpdatePreSetColor(byte? color)
+        {
+            channels[9] = color ?? 0;
+        }
+
         // CH11
         public void UpdateLedSpeed(byte? speed)
         {
@@ -169,9 +170,16 @@ namespace DMX.Entities
                 LedSpeed = "??";
         }
 
-        public void OpenDatasheet()
+        // CH12
+        public void UpdateAutoProgram(byte? program)
         {
-            System.Diagnostics.Process.Start(@"Datasheets\Skytec LED Movinghead.pdf");
+            channels[11] = program ?? 0;
+        }
+
+        // CH13
+        public void UpdateGobo(byte? gobo)
+        {
+            channels[12] = gobo ?? 0;
         }
     }
 }
