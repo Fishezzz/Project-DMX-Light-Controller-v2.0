@@ -9,11 +9,12 @@ namespace DMX
 {
     public abstract class DmxDevice
     {
-        public DmxDevice(string name, int startAddress, DmxDeviceTypes deviceType)
+        public DmxDevice(string name, int startAddress, DmxDeviceTypes deviceType, byte[] channels)
         {
             Name = name;
             StartAddress = startAddress;
             DeviceType = deviceType;
+            Channels = channels;
         }
 
         private readonly string name;
@@ -24,5 +25,8 @@ namespace DMX
 
         private readonly DmxDeviceTypes deviceType;
         public DmxDeviceTypes DeviceType { get; }
+
+        private byte[] channels;
+        public byte[] Channels { get; private set; }
     }
 }

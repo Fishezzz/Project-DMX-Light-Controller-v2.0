@@ -12,24 +12,13 @@ namespace DMX.Entities
         const int NUMBER_OF_CHANNELS = 6;
 
         public LedSpot(string name, int startAddress, DmxDeviceTypes deviceType)
-            : base(name, startAddress, deviceType)
-        {
-            Channels = new byte[NUMBER_OF_CHANNELS];
-        }
-
-        private byte[] channels;
-        public byte[] Channels { get; private set; }
+            : base(name, startAddress, deviceType, new byte[NUMBER_OF_CHANNELS])
+        { }
 
         public void UpdateChannel(int channelNumber, byte value)
         {
-            if (channelNumber >= 0 && channelNumber < channels.Count())
-                channels[channelNumber] = value;
-        }
-
-        public void UpdateChannel(byte[] values)
-        {
-            if (values.Count() == NUMBER_OF_CHANNELS)
-                channels = values;
+            if (channelNumber >= 0 && channelNumber < Channels.Count())
+                Channels[channelNumber] = value;
         }
 
         //// CH1 + CH2 + CH3

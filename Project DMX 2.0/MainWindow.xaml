@@ -10,7 +10,7 @@
     <Grid>
         <DockPanel Height="20" VerticalAlignment="Top">
             <Menu DockPanel.Dock="Top" Height="20">
-                <MenuItem Header="_Settings"/>
+                <MenuItem Header="_Settings" Click="Settings_Click"/>
                 <MenuItem Header="_Add Device" Click="NewDevice_Click"/>
                 <!--<MenuItem Header="_File">
                     <MenuItem Header="_Exit">

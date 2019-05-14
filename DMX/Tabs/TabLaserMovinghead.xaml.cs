@@ -9,32 +9,38 @@ namespace DMX.Tabs
     /// </summary>
     public partial class TabLaserMovinghead : TabItem
     {
-        LaserMovinghead _laserMovinghead;
-
-        public TabLaserMovinghead(LaserMovinghead laserMovinghead)
+        public TabLaserMovinghead(LaserMovinghead laserMovingheadDevice)
         {
             InitializeComponent();
-            this.DataContext = _laserMovinghead = laserMovinghead;
+            this.DataContext = laserMovinghead = laserMovingheadDevice;
         }
+
+        private LaserMovinghead laserMovinghead;
+        public LaserMovinghead LaserMovinghead
+        {
+            get { return laserMovinghead; }
+            set { laserMovinghead = value; }
+        }
+
 
         private void SldrRotationX_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            _laserMovinghead.UpdateRotationX((byte)sldrChannel1.Value, (byte)sldrChannel2.Value);
+            laserMovinghead.UpdateRotationX((byte)sldrChannel1.Value, (byte)sldrChannel2.Value);
         }
 
         private void SldrRotationY_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            _laserMovinghead.UpdateRotationY((byte)sldrChannel3.Value, (byte)sldrChannel4.Value);
+            laserMovinghead.UpdateRotationY((byte)sldrChannel3.Value, (byte)sldrChannel4.Value);
         }
 
         private void SldrAxisSpeed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            _laserMovinghead.UpdateAxisSpeed((byte)sldrChannel5.Value);
+            laserMovinghead.UpdateAxisSpeed((byte)sldrChannel5.Value);
         }
 
         private void SldrShutterStatus_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            _laserMovinghead.UpdateShutterStatus((byte)sldrChannel6.Value);
+            laserMovinghead.UpdateShutterStatus((byte)sldrChannel6.Value);
         }
     }
 }

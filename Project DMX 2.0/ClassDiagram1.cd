@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Project_DMX_2._0.Event_Args.NewDmxDeviceEventArgs">
-    <Position X="6" Y="0.5" Width="2.25" />
+    <Position X="3.25" Y="3.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
-      <FileName>EventArgs\NewDmxDeviceEventArgs.cs</FileName>
+      <FileName>Event_Args\NewDmxDeviceEventArgs.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Project_DMX_2._0.Exceptions.UnknownDeviceTypeException">
@@ -17,7 +17,7 @@
   <Class Name="Project_DMX_2._0.MainWindow" BaseTypeListCollapsed="true">
     <Position X="0.5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAACEQAACQAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <HashCode>AAACgAgABACAQAACQABAAAAAAAEAAAAACAAAAAAQEAA=</HashCode>
       <FileName>MainWindow.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -29,6 +29,21 @@
       <FileName>NewDeviceUI.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Project_DMX_2._0.Event_Args.SettingsEventArgs">
+    <Position X="6" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Event_Args\SettingsEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_DMX_2._0.SettingsUI">
+    <Position X="6" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAADAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SettingsUI.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

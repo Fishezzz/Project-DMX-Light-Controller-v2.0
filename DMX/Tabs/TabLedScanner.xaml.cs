@@ -21,12 +21,18 @@ namespace DMX.Tabs
     /// </summary>
     public partial class TabLedScanner : TabItem
     {
-        LedScanner _ledScanner;
-
-        public TabLedScanner(LedScanner ledScanner)
+        public TabLedScanner(LedScanner ledScannerDevice)
         {
             InitializeComponent();
-            this.DataContext = _ledScanner = ledScanner;
+            this.DataContext = ledScanner = ledScannerDevice;
         }
+
+        private LedScanner ledScanner;
+        public LedScanner LedScanner
+        {
+            get { return ledScanner; }
+            set { ledScanner = value; }
+        }
+
     }
 }

@@ -24,6 +24,7 @@ namespace Project_DMX_2._0
     public partial class NewDeviceUI : Window
     {
         Logger logger;
+
         public NewDeviceUI()
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace Project_DMX_2._0
         }
 
         public event EventHandler<NewDmxDeviceEventArgs> NewDmxDevice;
-        public void OnNewDmxDevice()
+        protected void OnNewDmxDevice()
         {
             int startAddress;
             if (NewDmxDevice != null)
@@ -54,7 +55,7 @@ namespace Project_DMX_2._0
             catch (UnknownDeviceTypeException ex)
             {
                 logger.Error(ex.Message + "\n" + ex.StackTrace);
-                MessageBox.Show(ex.Message, "Warning!Unknow device type...");
+                MessageBox.Show(ex.Message, "Warning! Unknow device type...");
                 logger.Warn("Closing NewDeviceUI window on Error");
                 this.Close();
             }
