@@ -13,7 +13,7 @@ namespace DMX.Entities
         const int NUMBER_OF_CHANNELS = 13;
         const double MAX_X_ROTATION = 540.0;
         const double MAX_Y_ROTATION = 270.0;
-        const double DEGREES_PER_BYTE = 1 / 65536;
+        const double DEGREES_PER_BYTE = 1 / 65535.0;
 
         public LedMovinghead(string name, int startAddress, DmxDeviceTypes deviceType)
             : base(name, startAddress, deviceType)
@@ -90,7 +90,7 @@ namespace DMX.Entities
         }
 
         // CH11
-        private string ledSpeed = "0,00%";
+        private string ledSpeed = "100,00%";
         public string LedSpeed
         {
             get { return ledSpeed; }
@@ -113,7 +113,7 @@ namespace DMX.Entities
         {
             channels[0] = X ?? 0;
             channels[1] = X_fine ?? 0;
-            RotationX = string.Format("{0:F2}°", MAX_X_ROTATION * (((int)channels[0] << 8) + (int)channels[1]) / DEGREES_PER_BYTE);
+            RotationX = string.Format("{0:F2}°", MAX_X_ROTATION * (((int)channels[0] << 8) + (int)channels[1]) * (double)DEGREES_PER_BYTE);
         }
 
         // CH3 + CH4
@@ -121,14 +121,14 @@ namespace DMX.Entities
         {
             channels[2] = Y ?? 0;
             channels[3] = Y_fine ?? 0;
-            RotationY = string.Format("{0:F2}°", MAX_Y_ROTATION * (((int)channels[2] << 8) + (int)channels[3]) / DEGREES_PER_BYTE);
+            RotationY = string.Format("{0:F2}°", MAX_Y_ROTATION * (((int)channels[2] << 8) + (int)channels[3]) * (double)DEGREES_PER_BYTE);
         }
 
         // CH5
         public void UpdateAxisSpeed(byte? speed)
         {
             channels[4] = speed ?? 0;
-            AxisSpeed = string.Format("{0:F2}%", 100.0 * channels[4] / 255);
+            AxisSpeed = string.Format("{0:F2}%", 100 * channels[4] / (double)255);
         }
 
         // CH6
@@ -139,9 +139,9 @@ namespace DMX.Entities
             if (channels[5] >= 0 && channels[5] <= 9)
                 ShutterStatus = "Shutter closed";
             else if (channels[5] <= 134)
-                ShutterStatus = string.Format("Shutter {0:F2}% open", 100.0 * (1 - (channels[5] - 9) / 125)); // 134-9=125   100->0%
+                ShutterStatus = string.Format("Shutter {0:F2}% open", 100 * (1 - ((channels[5] - 9) / (double)125))); // 134-9=125   100->0%
             else if (channels[5] <= 239)
-                ShutterStatus = string.Format("Strobe speed {0:F2}%", 100.0 * (channels[5] - 134) / 105);  // 239-134=105
+                ShutterStatus = string.Format("Strobe speed {0:F2}%", 100 * (channels[5] - 134) / (double)105);  // 239-134=105
             else if (channels[5] <= 255)
                 ShutterStatus = "Shutter open";
             else
@@ -164,7 +164,7 @@ namespace DMX.Entities
             channels[10] = speed ?? 0;
 
             if (channels[10] >= 0 && channels[10] <= 255)
-                LedSpeed = string.Format("Speed: {0:F2}%", 100.0 * (1 - channels[10] / 255));   // 100->0%
+                LedSpeed = string.Format("{0:F2}%", 100 * (1 - (channels[10] / (double)255)));  // 100->0%
             else
                 LedSpeed = "??";
         }

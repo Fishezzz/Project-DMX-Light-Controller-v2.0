@@ -8,7 +8,7 @@
         d:DesignHeight="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualHeight}"
         d:DesignWidth="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualWidth}">
     <!--Header="EuroLite LED Panel">-->
-    <Grid Background="#FFE5E5E5">
+    <Grid Background="#FFEEEEEE">
 
     </Grid>
 </TabItem>

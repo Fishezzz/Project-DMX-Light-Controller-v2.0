@@ -13,7 +13,7 @@ namespace DMX.Entities
         const int NUMBER_OF_CHANNELS = 6;
         const double MAX_X_ROTATION = 540.0;
         const double MAX_Y_ROTATION = 180.0;
-        const int DEGREES_PER_BYTE = 65535;
+        const double DEGREES_PER_BYTE = 1 / 65535.0;
 
         public LaserMovinghead(string name, int startAddress, DmxDeviceTypes deviceType)
             : base(name, startAddress, deviceType)
@@ -89,7 +89,7 @@ namespace DMX.Entities
         {
             channels[0] = X ?? 0;
             channels[1] = X_fine ?? 0;
-            RotationX = string.Format("{0:F2}°", MAX_X_ROTATION * (((int)channels[0] << 8) + (int)channels[1]) / DEGREES_PER_BYTE);
+            RotationX = string.Format("{0:F2}°", MAX_X_ROTATION * (((int)channels[0] << 8) + (int)channels[1]) * (double)DEGREES_PER_BYTE);
         }
 
         // CH3 + CH4
@@ -97,14 +97,14 @@ namespace DMX.Entities
         {
             channels[2] = Y ?? 0;
             channels[3] = Y_fine ?? 0;
-            RotationY = string.Format("{0:F2}°", MAX_Y_ROTATION * (((int)channels[2] << 8) + (int)channels[3]) / DEGREES_PER_BYTE);
+            RotationY = string.Format("{0:F2}°", MAX_Y_ROTATION * (((int)channels[2] << 8) + (int)channels[3]) * (double)DEGREES_PER_BYTE);
         }
 
         // CH5
         public void UpdateAxisSpeed(byte? speed)
         {
             channels[4] = speed ?? 0;
-            AxisSpeed = string.Format("{0:F2}%", 100.0 * channels[4] / 255);
+            AxisSpeed = string.Format("{0:F2}%", 100 * channels[4] / (double)255);
         }
 
         // CH6
@@ -115,9 +115,9 @@ namespace DMX.Entities
             if (channels[5] >= 0 && channels[5] <= 7)
                 ShutterStatus = "Shutter closed";
             else if (channels[5] <= 134)
-                ShutterStatus = string.Format("Shutter {0:F2}% open", 100.0 * (channels[5] - 7) / 127);  // 134-7=127
+                ShutterStatus = string.Format("Shutter {0:F2}% open", 100 * (channels[5] - 7) / (double)127);  // 134-7=127
             else if (channels[5] <= 238)
-                ShutterStatus = string.Format("Strobe speed {0:F2}%", 100.0 * (channels[5] - 134) / 104);    // 238-134=104
+                ShutterStatus = string.Format("Strobe speed {0:F2}%", 100 * (channels[5] - 134) / (double)104);    // 238-134=104
             else if (channels[5] <= 255)
                 ShutterStatus = $"Shutter open";
             else

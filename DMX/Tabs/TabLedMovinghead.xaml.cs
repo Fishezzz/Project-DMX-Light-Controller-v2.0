@@ -54,11 +54,26 @@ namespace DMX.Tabs
             if (budChannel7 != null && budChannel8 != null && budChannel9 != null && _ledMovinghead != null)
                 _ledMovinghead.UpdateRGB(budChannel7.Value, budChannel8.Value, budChannel9.Value);
         }
+
+        private void SldrLedSpeed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            _ledMovinghead.UpdateLedSpeed((byte)sldrChannel11.Value);
+        }
+
         // Kleuren CH10 => byte = SelectedIndex * 14;
         // Auto programma's CH12 => byte = SelectedIndex * 15;
         // Gobo's CH13 => byte = SelectedIndex * 14; if(SelectedIndex == 11 || SelectedIndex == Items.Last()) { byte = 200; }
+        private void rb_ColorsChecked(object sender, RoutedEventArgs e)
+        {
 
-        private void rb_Checked(object sender, RoutedEventArgs e)
+        }
+
+        private void rb_ProgramsChecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void rb_GobosChecked(object sender, RoutedEventArgs e)
         {
 
         }

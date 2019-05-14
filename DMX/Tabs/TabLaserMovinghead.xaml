@@ -8,7 +8,7 @@
         d:DesignHeight="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualHeight}"
         d:DesignWidth="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualWidth}"
         Header="Ayra Laser Movinghead">
-    <Grid Background="#FFE5E5E5">
+    <Grid Background="#FFEEEEEE">
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
             <StackPanel Orientation="Horizontal">
                 <StackPanel>
