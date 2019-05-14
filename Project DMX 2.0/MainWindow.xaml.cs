@@ -36,11 +36,11 @@ namespace Project_DMX_2._0
             logger = Logger.GetLogger;
             logger.Log("Initialized application at " + DateTime.Now.ToString());
 
-            TabLaserMovinghead tabLaserMovinghead = new TabLaserMovinghead(new LaserMovinghead("test", 120, DmxDeviceTypes.Ayra_LedLaserMovinghead));
+            TabLaserMovinghead tabLaserMovinghead = new TabLaserMovinghead(new LaserMovinghead("Ayra Laser Movinghead", 120, DmxDeviceTypes.Ayra_LedLaserMovinghead));
             tctDeviceTabs.Items.Add(tabLaserMovinghead);
             logger.Log("tabLaserMovinghead added to tctDeviceTabs in MainWindow");
 
-            TabLedMovinghead tabLedMovinghead = new TabLedMovinghead(new LedMovinghead("test", 120, DmxDeviceTypes.Skytec_LedMovinghead));
+            TabLedMovinghead tabLedMovinghead = new TabLedMovinghead(new LedMovinghead("Skytec LED Movinghead", 120, DmxDeviceTypes.Skytec_LedMovinghead));
             tctDeviceTabs.Items.Add(tabLedMovinghead);
             logger.Log("tabLedMovinghead added to tctDeviceTabs in MainWindow");
         }

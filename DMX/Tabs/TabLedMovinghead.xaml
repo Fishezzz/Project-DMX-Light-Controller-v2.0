@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         d:DesignHeight="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualHeight}"
         d:DesignWidth="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualWidth}"
-        Header="Skytec LED Movinghead">
+        Header="{Binding Name}">
     <Grid Background="#FFEEEEEE">
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
             <StackPanel Orientation="Horizontal">
