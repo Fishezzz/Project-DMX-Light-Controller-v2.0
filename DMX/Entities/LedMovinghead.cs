@@ -124,7 +124,7 @@ namespace DMX.Entities
             if (Channels[5] >= 0 && Channels[5] <= 9)
                 ShutterStatus = "Shutter closed";
             else if (Channels[5] <= 134)
-                ShutterStatus = string.Format("Shutter {0:F2}% open", 100 * (1 - ((Channels[5] - 9) / (double)125))); // 134-9=125   100->0%
+                ShutterStatus = string.Format("Shutter {0:F2}% open", 100 * ((Channels[5] - 9) / (double)125)); // 134-9=125
             else if (Channels[5] <= 239)
                 ShutterStatus = string.Format("Strobe speed {0:F2}%", 100 * (Channels[5] - 134) / (double)105);  // 239-134=105
             else if (Channels[5] <= 255)

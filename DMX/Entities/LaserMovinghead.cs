@@ -39,7 +39,7 @@ namespace DMX.Entities
         }
 
         // CH5
-        private string axisSpeed = "0,00%";
+        private string axisSpeed = "100,00%";
         public string AxisSpeed
         {
             get { return axisSpeed; }
@@ -89,7 +89,7 @@ namespace DMX.Entities
         public void UpdateAxisSpeed(byte? speed)
         {
             Channels[4] = speed ?? 0;
-            AxisSpeed = string.Format("{0:F2}%", 100 * Channels[4] / (double)255);
+            AxisSpeed = string.Format("{0:F2}%", 100 * (1 - (Channels[4] / (double)255)));  // 100->0%
         }
 
         // CH6

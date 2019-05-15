@@ -38,8 +38,6 @@ namespace Project_DMX_2._0
         byte[] _data = new byte[513];
         DispatcherTimer _dt;
 
-        TabLedMovinghead tabLedMovinghead;
-
         public MainWindow()
         {
             InitializeComponent();
@@ -56,11 +54,15 @@ namespace Project_DMX_2._0
             _dt.Interval = TimeSpan.FromMilliseconds(23);
             _dt.Tick += _dt_Tick;
 
+            _dmxDevices = new List<DmxDevice>();
+
             TabLaserMovinghead tabLaserMovinghead = new TabLaserMovinghead(new LaserMovinghead("Ayra Laser Movinghead", 120, DmxDeviceTypes.Ayra_LedLaserMovinghead));
+            _dmxDevices.Add(tabLaserMovinghead.DmxDevice);
             tctDeviceTabs.Items.Add(tabLaserMovinghead);
             logger.Log("tabLaserMovinghead added to tctDeviceTabs in MainWindow");
 
-            tabLedMovinghead = new TabLedMovinghead(new LedMovinghead("Skytec LED Movinghead", 120, DmxDeviceTypes.Skytec_LedMovinghead));
+            TabLedMovinghead tabLedMovinghead = new TabLedMovinghead(new LedMovinghead("Skytec LED Movinghead", 160, DmxDeviceTypes.Skytec_LedMovinghead));
+            _dmxDevices.Add(tabLedMovinghead.DmxDevice);
             tctDeviceTabs.Items.Add(tabLedMovinghead);
             logger.Log("tabLedMovinghead added to tctDeviceTabs in MainWindow");
 
@@ -85,8 +87,17 @@ namespace Project_DMX_2._0
         private void SettingsUI_SettingsUpdated(object sender, SettingsEventArgs e)
         {
             _settingsUI = null;
-            _sp.PortName = e.ComPort;
-            logger.Log("COM port changed to " + e.ComPort);
+            if (_sp != null && _sp.IsOpen)
+            {
+                TransferData(new byte[513]);
+                _sp.Close();
+            }
+
+            if (true/*e.ComPort != "None"*/)
+            {
+                _sp.PortName = e.ComPort;
+                logger.Log("COM port changed to " + e.ComPort);
+            }
 
             if (!_sp.IsOpen && _sp.PortName != "None")
             {
@@ -104,19 +115,18 @@ namespace Project_DMX_2._0
 
         private void _dt_Tick(object sender, EventArgs e)
         {
-            //  foreach (TabItem tabItem in TabControl)
-            //  {
-            //      byte[] channels = tabItem.<DmxDevice>.Channels;
-            //      int startAddress = tabItem.<DmxDevice>.StartAddress;
-            //      for (int i = 0; i < channels.Length; i++)
-            //          _data[startAddress + i] = channels[i];
-            //  }
-            byte[] temp = tabLedMovinghead.LedMovinghead.Channels;
+            foreach (DmxDevice dmxDevice in _dmxDevices)
+            {
+                byte[] channels = dmxDevice.Channels;
+                int startAddress = dmxDevice.StartAddress;
+                for (int i = 0; i < channels.Length; i++)
+                    _data[startAddress + i] = channels[i];
+            }
 
-            TransferData();
+            TransferData(_data);
         }
 
-        public void TransferData()
+        public void TransferData(byte[] data)
         {
             if (_sp != null && _sp.IsOpen)
             {
@@ -124,12 +134,22 @@ namespace Project_DMX_2._0
                 Thread.Sleep(1);
                 _sp.BreakState = false;
                 Thread.Sleep(1);
-                _sp.Write(_data, 0, 513);
+                _sp.Write(data, 0, 513);
             }
         }
 
         private void Main_Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            if (_sp.IsOpen)
+                TransferData(new byte[513]);
+
+            if (_sp != null)
+            {
+                if (_sp.IsOpen)
+                    TransferData(new byte[513]);
+                _sp.Dispose();
+            }
+
             if (_newDeviceUI != null)
                 _newDeviceUI.Close();
             logger.Warn("Closing application.....");
