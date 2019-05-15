@@ -10,11 +10,13 @@ namespace DMX.Tabs
     /// </summary>
     public partial class TabLedMovinghead : TabItem
     {
+        private LedMovinghead ledMovinghead;
+
         public TabLedMovinghead(LedMovinghead ledMovingheadDevice)
         {
             InitializeComponent();
             this.DataContext = ledMovinghead = ledMovingheadDevice;
-            DmxDevice = LedMovinghead;
+            DmxDevice = ledMovinghead;
         }
 
         private DmxDevice dmxDevice;
@@ -22,14 +24,6 @@ namespace DMX.Tabs
         {
             get { return dmxDevice; }
             set { dmxDevice = value; }
-        }
-
-
-        private LedMovinghead ledMovinghead;
-        public LedMovinghead LedMovinghead
-        {
-            get { return ledMovinghead; }
-            set { ledMovinghead = value; }
         }
 
         // CH1 + CH2
@@ -66,9 +60,8 @@ namespace DMX.Tabs
         // CH10
         private void rb_ColorsChecked(object sender, RoutedEventArgs e)
         {
-            // Waarde hardcoded doen met switch
             int index = Convert.ToInt32(((RadioButton)sender).Name.Split('_')[1]);
-            ledMovinghead.UpdatePreSetColor((byte)(index * 14));
+            ledMovinghead.UpdatePreSetColor((byte)Math.Round((index - 1) * 14.6));
         }
 
         // CH11
@@ -80,20 +73,18 @@ namespace DMX.Tabs
         // CH12
         private void rb_ProgramsChecked(object sender, RoutedEventArgs e)
         {
-            // Waarde hardcoded doen met switch
             int index = Convert.ToInt32(((RadioButton)sender).Name.Split('_')[1]);
-            ledMovinghead.UpdateAutoProgram((byte)(index * 15));
+            ledMovinghead.UpdateAutoProgram((byte)((index - 1) * 15));
         }
 
         // CH13
         private void rb_GobosChecked(object sender, RoutedEventArgs e)
         {
-            // Waarde hardcoded doen met switch
             int index = Convert.ToInt32(((RadioButton)sender).Name.Split('_')[1]);
             if (index == 12)
                 ledMovinghead.UpdateGobo((byte)200);
             else
-                ledMovinghead.UpdateGobo((byte)(index * 14));
+                ledMovinghead.UpdateGobo((byte)((index - 1) * 14));
         }
     }
 }

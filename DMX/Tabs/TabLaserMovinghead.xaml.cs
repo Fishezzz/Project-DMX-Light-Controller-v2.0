@@ -9,11 +9,13 @@ namespace DMX.Tabs
     /// </summary>
     public partial class TabLaserMovinghead : TabItem
     {
+        private LaserMovinghead laserMovinghead;
+
         public TabLaserMovinghead(LaserMovinghead laserMovingheadDevice)
         {
             InitializeComponent();
             this.DataContext = laserMovinghead = laserMovingheadDevice;
-            DmxDevice = LaserMovinghead;
+            DmxDevice = laserMovinghead;
         }
 
         private DmxDevice dmxDevice;
@@ -23,13 +25,6 @@ namespace DMX.Tabs
             set { dmxDevice = value; }
         }
         
-        private LaserMovinghead laserMovinghead;
-        public LaserMovinghead LaserMovinghead
-        {
-            get { return laserMovinghead; }
-            set { laserMovinghead = value; }
-        }
-
         private void SldrRotationX_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             laserMovinghead.UpdateRotationX((byte)sldrChannel1.Value, (byte)sldrChannel2.Value);

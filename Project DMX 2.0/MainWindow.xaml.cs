@@ -93,11 +93,8 @@ namespace Project_DMX_2._0
                 _sp.Close();
             }
 
-            if (true/*e.ComPort != "None"*/)
-            {
-                _sp.PortName = e.ComPort;
-                logger.Log("COM port changed to " + e.ComPort);
-            }
+            _sp.PortName = e.ComPort;
+            logger.Log("COM port changed to " + e.ComPort);
 
             if (!_sp.IsOpen && _sp.PortName != "None")
             {
