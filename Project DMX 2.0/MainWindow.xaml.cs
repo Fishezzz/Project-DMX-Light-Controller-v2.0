@@ -6,6 +6,7 @@ using Logging;
 using Project_DMX_2._0.Event_Args;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,7 @@ namespace Project_DMX_2._0
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
         Logger logger;
         public List<DmxDevice> _dmxDevices;
@@ -94,6 +95,7 @@ namespace Project_DMX_2._0
             }
 
             _sp.PortName = e.ComPort;
+            sbiComPort.Content = _sp.PortName;
             logger.Log("COM port changed to " + e.ComPort);
 
             if (!_sp.IsOpen && _sp.PortName != "None")
@@ -108,6 +110,13 @@ namespace Project_DMX_2._0
             _settingsUI = new SettingsUI(_sp.PortName);
             _settingsUI.SettingsUpdated += new EventHandler<SettingsEventArgs>(SettingsUI_SettingsUpdated);
             _settingsUI.ShowDialog();
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
         }
 
         private void _dt_Tick(object sender, EventArgs e)
@@ -151,6 +160,22 @@ namespace Project_DMX_2._0
                 _newDeviceUI.Close();
             logger.Warn("Closing application.....");
             logger = null;
+        }
+
+        private void TctDeviceTabs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.Source is TabControl)
+            {
+                TabControl tc = sender as TabControl;
+                try
+                {
+                    (((TabControl)sender).SelectedItem as TabItem).
+                }
+                catch (Exception)
+                {
+
+                }
+            }
         }
     }
 }
