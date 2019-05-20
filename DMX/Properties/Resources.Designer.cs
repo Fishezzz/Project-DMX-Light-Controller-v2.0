@@ -61,6 +61,26 @@ namespace DMX.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ayra_LedLaserMovinghead {
+            get {
+                object obj = ResourceManager.GetObject("Ayra_LedLaserMovinghead", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ayra_LedScanner {
+            get {
+                object obj = ResourceManager.GetObject("Ayra_LedScanner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] Datasheet_Laser_Movinghead {
@@ -107,6 +127,16 @@ namespace DMX.Properties {
             get {
                 object obj = ResourceManager.GetObject("Datasheet_LED_Scanner", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EuroLite_LedPanel {
+            get {
+                object obj = ResourceManager.GetObject("EuroLite_LedPanel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -213,9 +243,9 @@ namespace DMX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LedLaser {
+        internal static System.Drawing.Bitmap Showtec_LedSpot {
             get {
-                object obj = ResourceManager.GetObject("LedLaser", resourceCulture);
+                object obj = ResourceManager.GetObject("Showtec_LedSpot", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,39 +253,9 @@ namespace DMX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LedMovinghead {
+        internal static System.Drawing.Bitmap Skytec_LedMovinghead {
             get {
-                object obj = ResourceManager.GetObject("LedMovinghead", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap LedPanel {
-            get {
-                object obj = ResourceManager.GetObject("LedPanel", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap LedPar56 {
-            get {
-                object obj = ResourceManager.GetObject("LedPar56", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap LedScanner {
-            get {
-                object obj = ResourceManager.GetObject("LedScanner", resourceCulture);
+                object obj = ResourceManager.GetObject("Skytec_LedMovinghead", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

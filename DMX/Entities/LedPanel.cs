@@ -12,14 +12,8 @@ namespace DMX.Entities
         const int NUMBER_OF_CHANNELS = 48;
 
         public LedPanel(string name, int startAddress, DmxDeviceTypes deviceType)
-            : base(name, startAddress, deviceType, new byte[NUMBER_OF_CHANNELS])
+            : base(name, startAddress, deviceType, NUMBER_OF_CHANNELS)
         { }
-
-        public void UpdateChannel(int channelNumber, byte value)
-        {
-            if (channelNumber >= 0 && channelNumber < Channels.Count())
-                Channels[channelNumber] = value;
-        }
 
         public byte[] GetLedRGB(int ledNumber)
         {

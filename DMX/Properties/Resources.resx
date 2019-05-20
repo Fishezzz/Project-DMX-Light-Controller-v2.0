@@ -163,19 +163,19 @@
   <data name="Gobo_Open" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\images\gobo open.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LedLaser" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\images\ledlaser.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Ayra_LedLaserMovinghead" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\ayra_ledlasermovinghead.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LedMovinghead" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\images\ledmovinghead.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Ayra_LedScanner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\ayra_ledscanner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LedPanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\images\ledpanel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EuroLite_LedPanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\eurolite_ledpanel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LedPar56" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\images\ledpar56.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Showtec_LedSpot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\showtec_ledspot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LedScanner" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\images\ledscanner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Skytec_LedMovinghead" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\images\skytec_ledmovinghead.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

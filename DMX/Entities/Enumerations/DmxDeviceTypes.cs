@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DMX.Entities.Enumerations
+﻿namespace DMX.Entities.Enumerations
 {
     /// <summary>
     /// Skytec_Mini_Spot_Led_Movinghead,

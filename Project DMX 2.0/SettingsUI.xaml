@@ -4,7 +4,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Settings" Height="120" Width="240">
+        Title="Settings" Height="120" Width="240"
+        ResizeMode="NoResize" Icon="Resources/Images/gear_32xLG.png">
     <Grid>
         <Label Content="COM Port:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="25" Width="65"/>
         <ComboBox Name="cbxComPort" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,10,0,0" Width="120" Height="25"/>

@@ -90,46 +90,46 @@
                     <GroupBox Header="Pre-Set Colors" Margin="5" Width="140">
                         <ScrollViewer Height="142">
                             <StackPanel>
-                                <RadioButton Name="rbC10_1" Content="Closed" VerticalContentAlignment="Center" Checked="rb_ColorsChecked"/>
-                                <RadioButton Name="rbC10_2" Content="Open / White" VerticalContentAlignment="Center" Checked="rb_ColorsChecked"/>
-                                <RadioButton Name="rbC10_3" Content="Red" VerticalContentAlignment="Center" Checked="rb_ColorsChecked"/>
-                                <RadioButton Name="rbC10_4" Content="Green" VerticalContentAlignment="Center" Checked="rb_ColorsChecked"/>
-                                <RadioButton Name="rbC10_5" Content="UV" VerticalContentAlignment="Center" Checked="rb_ColorsChecked"/>
-                                <RadioButton Name="rbC10_6" Content="Light blue" VerticalContentAlignment="Center" Checked="rb_ColorsChecked"/>
-                                <RadioButton Name="rbC10_7" Content="Pink" VerticalContentAlignment="Center" Checked="rb_ColorsChecked"/>
-                                <RadioButton Name="rbC10_8" Content="Yellow" VerticalContentAlignment="Center" Checked="rb_ColorsChecked"/>
-                                <RadioButton Name="rbC10_9" Content="Magenta" VerticalContentAlignment="Center" Checked="rb_ColorsChecked"/>
-                                <RadioButton Name="rbC10_10" Content="Red II" VerticalContentAlignment="Center" Checked="rb_ColorsChecked"/>
-                                <RadioButton Name="rbC10_11" Content="Groen II" VerticalContentAlignment="Center" Checked="rb_ColorsChecked"/>
-                                <RadioButton Name="rbC10_12" Content="Light green" VerticalContentAlignment="Center" Checked="rb_ColorsChecked"/>
-                                <RadioButton Name="rbC10_13" Content="Purple" VerticalContentAlignment="Center" Checked="rb_ColorsChecked"/>
-                                <RadioButton Name="rbC10_14" Content="Light pink" VerticalContentAlignment="Center" Checked="rb_ColorsChecked"/>
-                                <RadioButton Name="rbC10_15" Content="Light green II" VerticalContentAlignment="Center" Checked="rb_ColorsChecked"/>
-                                <RadioButton Name="rbC10_16" Content="Light blue II" VerticalContentAlignment="Center" Checked="rb_ColorsChecked"/>
-                                <RadioButton Name="rbC10_17" Content="Rainbow effect" VerticalContentAlignment="Center" Checked="rb_ColorsChecked"/>
+                                <RadioButton Name="rbC10_1" Content="Closed" VerticalContentAlignment="Center" Checked="Rb_ColorsChecked"/>
+                                <RadioButton Name="rbC10_2" Content="Open / White" VerticalContentAlignment="Center" Checked="Rb_ColorsChecked"/>
+                                <RadioButton Name="rbC10_3" Content="Red" VerticalContentAlignment="Center" Checked="Rb_ColorsChecked"/>
+                                <RadioButton Name="rbC10_4" Content="Green" VerticalContentAlignment="Center" Checked="Rb_ColorsChecked"/>
+                                <RadioButton Name="rbC10_5" Content="UV" VerticalContentAlignment="Center" Checked="Rb_ColorsChecked"/>
+                                <RadioButton Name="rbC10_6" Content="Light blue" VerticalContentAlignment="Center" Checked="Rb_ColorsChecked"/>
+                                <RadioButton Name="rbC10_7" Content="Pink" VerticalContentAlignment="Center" Checked="Rb_ColorsChecked"/>
+                                <RadioButton Name="rbC10_8" Content="Yellow" VerticalContentAlignment="Center" Checked="Rb_ColorsChecked"/>
+                                <RadioButton Name="rbC10_9" Content="Magenta" VerticalContentAlignment="Center" Checked="Rb_ColorsChecked"/>
+                                <RadioButton Name="rbC10_10" Content="Red II" VerticalContentAlignment="Center" Checked="Rb_ColorsChecked"/>
+                                <RadioButton Name="rbC10_11" Content="Groen II" VerticalContentAlignment="Center" Checked="Rb_ColorsChecked"/>
+                                <RadioButton Name="rbC10_12" Content="Light green" VerticalContentAlignment="Center" Checked="Rb_ColorsChecked"/>
+                                <RadioButton Name="rbC10_13" Content="Purple" VerticalContentAlignment="Center" Checked="Rb_ColorsChecked"/>
+                                <RadioButton Name="rbC10_14" Content="Light pink" VerticalContentAlignment="Center" Checked="Rb_ColorsChecked"/>
+                                <RadioButton Name="rbC10_15" Content="Light green II" VerticalContentAlignment="Center" Checked="Rb_ColorsChecked"/>
+                                <RadioButton Name="rbC10_16" Content="Light blue II" VerticalContentAlignment="Center" Checked="Rb_ColorsChecked"/>
+                                <RadioButton Name="rbC10_17" Content="Rainbow effect" VerticalContentAlignment="Center" Checked="Rb_ColorsChecked"/>
                             </StackPanel>
                         </ScrollViewer>
                     </GroupBox>
                     <GroupBox Header="Auto Programs" Margin="5" Width="140">
                         <ScrollViewer Height="142">
                             <StackPanel>
-                                <RadioButton Name="rbC12_1" Content="No function" VerticalContentAlignment="Center" Checked="rb_ProgramsChecked"/>
-                                <RadioButton Name="rbC12_2" Content="Auto program 1" VerticalContentAlignment="Center" Checked="rb_ProgramsChecked"/>
-                                <RadioButton Name="rbC12_3" Content="Auto program 2" VerticalContentAlignment="Center" Checked="rb_ProgramsChecked"/>
-                                <RadioButton Name="rbC12_4" Content="Auto program 3" VerticalContentAlignment="Center" Checked="rb_ProgramsChecked"/>
-                                <RadioButton Name="rbC12_5" Content="Auto program 4" VerticalContentAlignment="Center" Checked="rb_ProgramsChecked"/>
-                                <RadioButton Name="rbC12_6" Content="Auto program 5" VerticalContentAlignment="Center" Checked="rb_ProgramsChecked"/>
-                                <RadioButton Name="rbC12_7" Content="Auto program 6" VerticalContentAlignment="Center" Checked="rb_ProgramsChecked"/>
-                                <RadioButton Name="rbC12_8" Content="Auto program 7" VerticalContentAlignment="Center" Checked="rb_ProgramsChecked"/>
-                                <RadioButton Name="rbC12_9" Content="Auto program 8" VerticalContentAlignment="Center" Checked="rb_ProgramsChecked"/>
-                                <RadioButton Name="rbC12_10" Content="Soundcontrol 1" VerticalContentAlignment="Center" Checked="rb_ProgramsChecked"/>
-                                <RadioButton Name="rbC12_11" Content="Soundcontrol 2" VerticalContentAlignment="Center" Checked="rb_ProgramsChecked"/>
-                                <RadioButton Name="rbC12_12" Content="Soundcontrol 3" VerticalContentAlignment="Center" Checked="rb_ProgramsChecked"/>
-                                <RadioButton Name="rbC12_13" Content="Soundcontrol 4" VerticalContentAlignment="Center" Checked="rb_ProgramsChecked"/>
-                                <RadioButton Name="rbC12_14" Content="Soundcontrol 5" VerticalContentAlignment="Center" Checked="rb_ProgramsChecked"/>
-                                <RadioButton Name="rbC12_15" Content="Soundcontrol 6" VerticalContentAlignment="Center" Checked="rb_ProgramsChecked"/>
-                                <RadioButton Name="rbC12_16" Content="Soundcontrol 7" VerticalContentAlignment="Center" Checked="rb_ProgramsChecked"/>
-                                <RadioButton Name="rbC12_17" Content="Soundcontrol 8" VerticalContentAlignment="Center" Checked="rb_ProgramsChecked"/>
+                                <RadioButton Name="rbC12_1" Content="No function" VerticalContentAlignment="Center" Checked="Rb_ProgramsChecked"/>
+                                <RadioButton Name="rbC12_2" Content="Auto program 1" VerticalContentAlignment="Center" Checked="Rb_ProgramsChecked"/>
+                                <RadioButton Name="rbC12_3" Content="Auto program 2" VerticalContentAlignment="Center" Checked="Rb_ProgramsChecked"/>
+                                <RadioButton Name="rbC12_4" Content="Auto program 3" VerticalContentAlignment="Center" Checked="Rb_ProgramsChecked"/>
+                                <RadioButton Name="rbC12_5" Content="Auto program 4" VerticalContentAlignment="Center" Checked="Rb_ProgramsChecked"/>
+                                <RadioButton Name="rbC12_6" Content="Auto program 5" VerticalContentAlignment="Center" Checked="Rb_ProgramsChecked"/>
+                                <RadioButton Name="rbC12_7" Content="Auto program 6" VerticalContentAlignment="Center" Checked="Rb_ProgramsChecked"/>
+                                <RadioButton Name="rbC12_8" Content="Auto program 7" VerticalContentAlignment="Center" Checked="Rb_ProgramsChecked"/>
+                                <RadioButton Name="rbC12_9" Content="Auto program 8" VerticalContentAlignment="Center" Checked="Rb_ProgramsChecked"/>
+                                <RadioButton Name="rbC12_10" Content="Soundcontrol 1" VerticalContentAlignment="Center" Checked="Rb_ProgramsChecked"/>
+                                <RadioButton Name="rbC12_11" Content="Soundcontrol 2" VerticalContentAlignment="Center" Checked="Rb_ProgramsChecked"/>
+                                <RadioButton Name="rbC12_12" Content="Soundcontrol 3" VerticalContentAlignment="Center" Checked="Rb_ProgramsChecked"/>
+                                <RadioButton Name="rbC12_13" Content="Soundcontrol 4" VerticalContentAlignment="Center" Checked="Rb_ProgramsChecked"/>
+                                <RadioButton Name="rbC12_14" Content="Soundcontrol 5" VerticalContentAlignment="Center" Checked="Rb_ProgramsChecked"/>
+                                <RadioButton Name="rbC12_15" Content="Soundcontrol 6" VerticalContentAlignment="Center" Checked="Rb_ProgramsChecked"/>
+                                <RadioButton Name="rbC12_16" Content="Soundcontrol 7" VerticalContentAlignment="Center" Checked="Rb_ProgramsChecked"/>
+                                <RadioButton Name="rbC12_17" Content="Soundcontrol 8" VerticalContentAlignment="Center" Checked="Rb_ProgramsChecked"/>
                             </StackPanel>
                         </ScrollViewer>
                     </GroupBox>
@@ -138,38 +138,38 @@
                     <GroupBox Header="Gobo's" Margin="5" Width="100">
                         <ScrollViewer Height="320">
                             <StackPanel>
-                                <RadioButton Name="rbC13_1" VerticalContentAlignment="Center" Checked="rb_GobosChecked">
+                                <RadioButton Name="rbC13_1" VerticalContentAlignment="Center" Checked="Rb_GobosChecked">
                                     <Image Source="/DMX;component/Resources/Images/Gobo Open.PNG" Height="40" Width="50"/>
                                 </RadioButton>
-                                <RadioButton Name="rbC13_2" VerticalContentAlignment="Center" Checked="rb_GobosChecked">
+                                <RadioButton Name="rbC13_2" VerticalContentAlignment="Center" Checked="Rb_GobosChecked">
                                     <Image Source="/DMX;component/Resources/Images/Gobo 1.PNG" Height="40" Width="50"/>
                                 </RadioButton>
-                                <RadioButton Name="rbC13_3" VerticalContentAlignment="Center" Checked="rb_GobosChecked">
+                                <RadioButton Name="rbC13_3" VerticalContentAlignment="Center" Checked="Rb_GobosChecked">
                                     <Image Source="/DMX;component/Resources/Images/Gobo 2.PNG" Height="40" Width="50"/>
                                 </RadioButton>
-                                <RadioButton Name="rbC13_4" VerticalContentAlignment="Center" Checked="rb_GobosChecked">
+                                <RadioButton Name="rbC13_4" VerticalContentAlignment="Center" Checked="Rb_GobosChecked">
                                     <Image Source="/DMX;component/Resources/Images/Gobo 3.PNG" Height="40" Width="50"/>
                                 </RadioButton>
-                                <RadioButton Name="rbC13_5" VerticalContentAlignment="Center" Checked="rb_GobosChecked">
+                                <RadioButton Name="rbC13_5" VerticalContentAlignment="Center" Checked="Rb_GobosChecked">
                                     <Image Source="/DMX;component/Resources/Images/Gobo 4.PNG" Height="40" Width="50"/>
                                 </RadioButton>
-                                <RadioButton Name="rbC13_6" VerticalContentAlignment="Center" Checked="rb_GobosChecked">
+                                <RadioButton Name="rbC13_6" VerticalContentAlignment="Center" Checked="Rb_GobosChecked">
                                     <Image Source="/DMX;component/Resources/Images/Gobo 5.PNG" Height="40" Width="50"/>
                                 </RadioButton>
-                                <RadioButton Name="rbC13_7" VerticalContentAlignment="Center" Checked="rb_GobosChecked">
+                                <RadioButton Name="rbC13_7" VerticalContentAlignment="Center" Checked="Rb_GobosChecked">
                                     <Image Source="/DMX;component/Resources/Images/Gobo 6.PNG" Height="40" Width="50"/>
                                 </RadioButton>
-                                <RadioButton Name="rbC13_8" VerticalContentAlignment="Center" Checked="rb_GobosChecked">
+                                <RadioButton Name="rbC13_8" VerticalContentAlignment="Center" Checked="Rb_GobosChecked">
                                     <Image Source="/DMX;component/Resources/Images/Gobo 7.PNG" Height="40" Width="50"/>
                                 </RadioButton>
-                                <RadioButton Name="rbC13_9" VerticalContentAlignment="Center" Checked="rb_GobosChecked">
+                                <RadioButton Name="rbC13_9" VerticalContentAlignment="Center" Checked="Rb_GobosChecked">
                                     <Image Source="/DMX;component/Resources/Images/Gobo 8.PNG" Height="40" Width="50"/>
                                 </RadioButton>
-                                <RadioButton Name="rbC13_10" VerticalContentAlignment="Center" Checked="rb_GobosChecked">
+                                <RadioButton Name="rbC13_10" VerticalContentAlignment="Center" Checked="Rb_GobosChecked">
                                     <Image Source="/DMX;component/Resources/Images/Gobo 9.PNG" Height="40" Width="50"/>
                                 </RadioButton>
-                                <RadioButton Name="rbC13_11" Content="Positive&#xA;Rainbow" VerticalContentAlignment="Center" Checked="rb_GobosChecked"/>
-                                <RadioButton Name="rbC13_12" Content="Negative&#xA;Rainbow" VerticalContentAlignment="Center" Checked="rb_GobosChecked"/>
+                                <RadioButton Name="rbC13_11" Content="Positive&#xA;Rainbow" VerticalContentAlignment="Center" Checked="Rb_GobosChecked"/>
+                                <RadioButton Name="rbC13_12" Content="Negative&#xA;Rainbow" VerticalContentAlignment="Center" Checked="Rb_GobosChecked"/>
                             </StackPanel>
                         </ScrollViewer>
                     </GroupBox>

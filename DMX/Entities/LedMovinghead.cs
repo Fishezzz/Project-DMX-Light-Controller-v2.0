@@ -11,7 +11,7 @@ namespace DMX.Entities
         const double DEGREES_PER_BYTE = 1 / 65535.0;
 
         public LedMovinghead(string name, int startAddress, DmxDeviceTypes deviceType)
-            : base(name, startAddress, deviceType, new byte[NUMBER_OF_CHANNELS])
+            : base(name, startAddress, deviceType, NUMBER_OF_CHANNELS)
         { }
 
         // CH1 + CH2
@@ -89,8 +89,7 @@ namespace DMX.Entities
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
         // CH1 + CH2

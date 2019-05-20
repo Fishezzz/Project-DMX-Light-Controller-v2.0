@@ -15,8 +15,9 @@ namespace DMX.Tabs
         public TabLedMovinghead(LedMovinghead ledMovingheadDevice)
         {
             InitializeComponent();
-            this.DataContext = ledMovinghead = ledMovingheadDevice;
-            DmxDevice = ledMovinghead;
+            this.DataContext = ledMovingheadDevice;
+            ledMovinghead = ledMovingheadDevice;
+            DmxDevice = ledMovingheadDevice;
         }
 
         private DmxDevice dmxDevice;
@@ -58,7 +59,7 @@ namespace DMX.Tabs
         }
 
         // CH10
-        private void rb_ColorsChecked(object sender, RoutedEventArgs e)
+        private void Rb_ColorsChecked(object sender, RoutedEventArgs e)
         {
             int index = Convert.ToInt32(((RadioButton)sender).Name.Split('_')[1]);
             ledMovinghead.UpdatePreSetColor((byte)Math.Round((index - 1) * 14.6));
@@ -71,14 +72,14 @@ namespace DMX.Tabs
         }
 
         // CH12
-        private void rb_ProgramsChecked(object sender, RoutedEventArgs e)
+        private void Rb_ProgramsChecked(object sender, RoutedEventArgs e)
         {
             int index = Convert.ToInt32(((RadioButton)sender).Name.Split('_')[1]);
             ledMovinghead.UpdateAutoProgram((byte)((index - 1) * 15));
         }
 
         // CH13
-        private void rb_GobosChecked(object sender, RoutedEventArgs e)
+        private void Rb_GobosChecked(object sender, RoutedEventArgs e)
         {
             int index = Convert.ToInt32(((RadioButton)sender).Name.Split('_')[1]);
             if (index == 12)

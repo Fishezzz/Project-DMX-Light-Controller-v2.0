@@ -14,8 +14,9 @@ namespace DMX.Tabs
         public TabLaserMovinghead(LaserMovinghead laserMovingheadDevice)
         {
             InitializeComponent();
-            this.DataContext = laserMovinghead = laserMovingheadDevice;
-            DmxDevice = laserMovinghead;
+            this.DataContext = laserMovingheadDevice;
+            laserMovinghead = laserMovingheadDevice;
+            DmxDevice = laserMovingheadDevice;
         }
 
         private DmxDevice dmxDevice;
@@ -25,21 +26,25 @@ namespace DMX.Tabs
             set { dmxDevice = value; }
         }
         
+        // CH1 + CH2
         private void SldrRotationX_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             laserMovinghead.UpdateRotationX((byte)sldrChannel1.Value, (byte)sldrChannel2.Value);
         }
 
+        // CH3 + CH4
         private void SldrRotationY_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             laserMovinghead.UpdateRotationY((byte)sldrChannel3.Value, (byte)sldrChannel4.Value);
         }
 
+        // CH5
         private void SldrAxisSpeed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             laserMovinghead.UpdateAxisSpeed((byte)sldrChannel5.Value);
         }
 
+        // CH6
         private void SldrShutterStatus_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             laserMovinghead.UpdateShutterStatus((byte)sldrChannel6.Value);

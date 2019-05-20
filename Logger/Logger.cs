@@ -20,8 +20,13 @@ namespace Logging
         /// </summary>
         ~Logger()
         {
-            writer.Close();
-            writer.Dispose();
+            try
+            {
+                writer.Close();
+                writer.Dispose();
+            }
+            catch (Exception)
+            { }
             writer = null;
         }
 
@@ -87,6 +92,18 @@ namespace Logging
         {
             DateTime dt = DateTime.Now;
             writer.WriteLine($"[ERROR] {dt.Hour.ToString().PadLeft(2, '0')}:{dt.Minute.ToString().PadLeft(2, '0')}:{dt.Second.ToString().PadLeft(2, '0')} >>>> {error}");
+        }
+
+        /// <summary>
+        /// Logging error to logging file.
+        /// Used Format:
+        /// 'Exception message', 'Newline', 'Stack trace'
+        /// </summary>
+        /// <param name="ex">Exception that's been thrown</param>
+        public void Error(Exception ex)
+        {
+            DateTime dt = DateTime.Now;
+            writer.WriteLine($"[ERROR] {dt.Hour.ToString().PadLeft(2, '0')}:{dt.Minute.ToString().PadLeft(2, '0')}:{dt.Second.ToString().PadLeft(2, '0')} >>>> {ex.Message}\n{ex.StackTrace}");
         }
     }
 }

@@ -4,33 +4,44 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="DMX Controller v2.0" Height="465" Width="600"
-        MinHeight="200" MinWidth="300"
+        Title="DMX Controller v2.0" Height="470" Width="600"
+        MinHeight="230" MinWidth="300"
         Name="Main_Window" Closing="Main_Window_Closing">
     <Grid>
-        <DockPanel Height="20" VerticalAlignment="Top">
-            <Menu DockPanel.Dock="Top" Height="20">
-                <MenuItem Header="_Settings" Click="Settings_Click">
-                    <!--<MenuItem.Icon>
-                            <Image Source="settings.ico"/>
-                        </MenuItem.Icon>-->
+        <DockPanel VerticalAlignment="Top">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Click="Settings_Click">
+                    <MenuItem.Header>
+                        <TextBlock VerticalAlignment="Center">Settings</TextBlock>
+                    </MenuItem.Header>
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Images/gear_32xLG.png"/>
+                    </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Add Device" Click="NewDevice_Click"/>
+                <MenuItem Click="NewDevice_Click">
+                    <MenuItem.Header>
+                        <TextBlock VerticalAlignment="Center">Add device</TextBlock>
+                    </MenuItem.Header>
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Images/Add_16x.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Click="RemoveSelectedDevice_Click">
+                    <MenuItem.Header>
+                        <TextBlock VerticalAlignment="Center">Remove selected device</TextBlock>
+                    </MenuItem.Header>
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Images/Remove_16x.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </Menu>
         </DockPanel>
 
-        <DockPanel Margin="0,20">
-            <TabControl Name="tctDeviceTabs" HorizontalAlignment="Left" Width="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualWidth}" SelectionChanged="TctDeviceTabs_SelectionChanged">
-                <TabItem Header="TabItem">
-                    <Grid Background="#FFE5E5E5"/>
-                </TabItem>
-                <TabItem Header="TabItem">
-                    <Grid Background="#FFE5E5E5"/>
-                </TabItem>
-            </TabControl>
+        <DockPanel Margin="0,23">
+            <TabControl Name="tctDeviceTabs" HorizontalAlignment="Left" Width="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualWidth}" SelectionChanged="TctDeviceTabs_SelectionChanged"/>
         </DockPanel>
 
-        <DockPanel Height="20" VerticalAlignment="Bottom">
+        <DockPanel Height="23" VerticalAlignment="Bottom">
             <StatusBar Width="{Binding ActualWidth, ElementName=Main_Window}">
                 <StatusBarItem VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="5,0" Content="COM Port:"/>
                 <StatusBarItem VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="0" Width="50" Name="sbiComPort" Content=""/>

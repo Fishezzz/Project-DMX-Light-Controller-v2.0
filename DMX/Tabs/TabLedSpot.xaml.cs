@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DMX.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,21 @@ namespace DMX.Tabs
     /// </summary>
     public partial class TabLedSpot : TabItem
     {
-        public TabLedSpot()
+        private LedSpot ledSpot;
+
+        public TabLedSpot(LedSpot ledSpotDevice)
         {
             InitializeComponent();
+            this.DataContext = ledSpotDevice;
+            ledSpot = ledSpotDevice;
+            DmxDevice = ledSpotDevice;
+        }
+
+        private DmxDevice dmxDevice;
+        public DmxDevice DmxDevice
+        {
+            get { return dmxDevice; }
+            set { dmxDevice = value; }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using DMX.Entities.Enumerations;
+﻿using DMX;
+using DMX.Entities.Enumerations;
 using Logging;
 using Project_DMX_2._0.Event_Args;
 using Project_DMX_2._0.Exceptions;
@@ -24,48 +25,34 @@ namespace Project_DMX_2._0
     public partial class NewDeviceUI : Window
     {
         Logger logger;
+        
+        public List<DmxDevice> AvailableDevices { get; set; }
 
-        public NewDeviceUI()
+        public NewDeviceUI(List<DmxDevice> availableDevices)
         {
             InitializeComponent();
             logger = Logger.GetLogger;
             logger.Log("Openend NewDeviceUI window");
+            AvailableDevices = availableDevices;
+            cbxDeviceType.ItemsSource = availableDevices;
         }
 
         public event EventHandler<NewDmxDeviceEventArgs> NewDmxDevice;
         protected void OnNewDmxDevice()
         {
-            int startAddress;
-            if (NewDmxDevice != null)
-                NewDmxDevice(this,
-                    new NewDmxDeviceEventArgs(
-                        Enum.IsDefined(typeof(DmxDeviceTypes), cbxDeviceType.SelectedIndex) ? (DmxDeviceTypes)cbxDeviceType.SelectedIndex : DmxDeviceTypes.Unknown,
-                        tbxName.Text,
-                        int.TryParse(tbxStart.Text, out startAddress) ? ((startAddress >= 0 && startAddress <= 512) ? startAddress : 0) : 0
-                    )
-                );
+            int index = cbxDeviceType.SelectedIndex;
+            if (index >= 0)
+                NewDmxDevice?.Invoke(this, new NewDmxDeviceEventArgs(AvailableDevices[index]));
+            else
+            {
+                MessageBox.Show("Unable to add device!\nNo device selected.", "Warning! Cannot add device...", MessageBoxButton.OK, MessageBoxImage.Warning);
+                logger.Warn("Unable to add device. No device selected");
+            }
         }
 
         private void BtnCreate_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                OnNewDmxDevice();
-            }
-            catch (UnknownDeviceTypeException ex)
-            {
-                logger.Error(ex.Message + "\n" + ex.StackTrace);
-                MessageBox.Show(ex.Message, "Warning! Unknow device type...");
-                logger.Warn("Closing NewDeviceUI window on Error");
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                logger.Error(ex.Message + "\n" + ex.StackTrace);
-                logger.Warn("Closing NewDeviceUI window on Error");
-                this.Close();
-            }
-
+            OnNewDmxDevice();
             logger.Log("Closing NewDeviceUI window");
             this.Close();
         }
@@ -74,6 +61,14 @@ namespace Project_DMX_2._0
         {
             logger.Warn("Closing NewDeviceUI window on Cancel");
             this.Close();
+        }
+
+        private void CbxDeviceType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DmxDevice tempDevice = AvailableDevices[cbxDeviceType.SelectedIndex];
+            Tuple<string, string, int, int> properties = Tuple.Create(tempDevice.Name, tempDevice.DeviceType.ToString(), tempDevice.StartAddress, tempDevice.Channels.Count());
+            gbxProperties.DataContext = properties;
+            imgDevice.DataContext = Tuple.Create("/DMX;component/Resources/Images/" + tempDevice.DeviceType.ToString() + ".png");
         }
     }
 }

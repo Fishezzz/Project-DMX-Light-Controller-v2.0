@@ -3,6 +3,7 @@ using DMX.Entities;
 using DMX.Entities.Enumerations;
 using DMX.Tabs;
 using Logging;
+using Newtonsoft.Json;
 using Project_DMX_2._0.Event_Args;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,8 @@ namespace Project_DMX_2._0
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
         Logger logger;
-        public List<DmxDevice> _dmxDevices;
+        List<DmxDevice> _dmxDevices;
+        List<DmxDevice> _availableDevices;
         NewDeviceUI _newDeviceUI;
         SettingsUI _settingsUI;
 
@@ -57,15 +59,13 @@ namespace Project_DMX_2._0
 
             _dmxDevices = new List<DmxDevice>();
 
-            TabLaserMovinghead tabLaserMovinghead = new TabLaserMovinghead(new LaserMovinghead("Ayra Laser Movinghead", 120, DmxDeviceTypes.Ayra_LedLaserMovinghead));
-            _dmxDevices.Add(tabLaserMovinghead.DmxDevice);
-            tctDeviceTabs.Items.Add(tabLaserMovinghead);
-            logger.Log("tabLaserMovinghead added to tctDeviceTabs in MainWindow");
-
-            TabLedMovinghead tabLedMovinghead = new TabLedMovinghead(new LedMovinghead("Skytec LED Movinghead", 160, DmxDeviceTypes.Skytec_LedMovinghead));
-            _dmxDevices.Add(tabLedMovinghead.DmxDevice);
-            tctDeviceTabs.Items.Add(tabLedMovinghead);
-            logger.Log("tabLedMovinghead added to tctDeviceTabs in MainWindow");
+            string devicesJSON  = new System.IO.StreamReader(Environment.CurrentDirectory + "\\devices.json").ReadToEnd();
+            logger.Log("devices.json read");
+            List<JsonDmxDeviceObject> tempDmxDevices = JsonConvert.DeserializeObject<List<JsonDmxDeviceObject>>(devicesJSON);
+            _availableDevices = new List<DmxDevice>();
+            foreach (JsonDmxDeviceObject deviceObject in tempDmxDevices)
+                _availableDevices.Add(new DmxDevice(deviceObject));
+            logger.Log("All available devices added");
 
             _dt.Start();
             logger.Log("Dispatcher timer started...");
@@ -75,12 +75,52 @@ namespace Project_DMX_2._0
         {
             _newDeviceUI = null;
             _dmxDevices.Add(e.DmxDevice);
+            _availableDevices.Remove(e.DmxDevice);
             logger.Log("New DmxDevice added: " + e.DmxDevice.Name + " @ " + e.DmxDevice.StartAddress);
+            TabItem tempTabItem;
+            switch (e.DmxDevice.DeviceType)
+            {
+                case DmxDeviceTypes.Skytec_LedMovinghead:
+                    tempTabItem = new TabLedMovinghead(new LedMovinghead(e.DmxDevice.Name, e.DmxDevice.StartAddress, e.DmxDevice.DeviceType));
+                    tctDeviceTabs.Items.Add(tempTabItem);
+                    tctDeviceTabs.SelectedItem = tempTabItem;
+                    logger.Log("TabLedMovinghead added");
+                    break;
+                case DmxDeviceTypes.Ayra_LedLaserMovinghead:
+                    tempTabItem = new TabLaserMovinghead(new LaserMovinghead(e.DmxDevice.Name, e.DmxDevice.StartAddress, e.DmxDevice.DeviceType));
+                    tctDeviceTabs.Items.Add(tempTabItem);
+                    logger.Log("TabLaserMovinghead added");
+                    tctDeviceTabs.SelectedItem = tempTabItem;
+                    break;
+                case DmxDeviceTypes.Ayra_LedScanner:
+                    tempTabItem = new TabLedScanner(new LedScanner(e.DmxDevice.Name, e.DmxDevice.StartAddress, e.DmxDevice.DeviceType));
+                    tctDeviceTabs.Items.Add(tempTabItem);
+                    logger.Log("TabLedScanner added");
+                    tctDeviceTabs.SelectedItem = tempTabItem;
+                    break;
+                case DmxDeviceTypes.EuroLite_LedPanel:
+                    tempTabItem = new TabLedPanel(new LedPanel(e.DmxDevice.Name, e.DmxDevice.StartAddress, e.DmxDevice.DeviceType));
+                    tctDeviceTabs.Items.Add(tempTabItem);
+                    logger.Log("TabLedPanel added");
+                    tctDeviceTabs.SelectedItem = tempTabItem;
+                    break;
+                case DmxDeviceTypes.Showtec_LedSpot:
+                    tempTabItem = new TabLedSpot(new LedSpot(e.DmxDevice.Name, e.DmxDevice.StartAddress, e.DmxDevice.DeviceType));
+                    tctDeviceTabs.Items.Add(tempTabItem);
+                    logger.Log("TabLedSpot added");
+                    tctDeviceTabs.SelectedItem = tempTabItem;
+                    break;
+                case DmxDeviceTypes.Unknown:
+                case DmxDeviceTypes.None:
+                default:
+                    logger.Warn("Cannot add device tab because DeviceType is None/Unknown");
+                    break;
+            }
         }
 
         private void NewDevice_Click(object sender, RoutedEventArgs e)
         {
-            _newDeviceUI = new NewDeviceUI();
+            _newDeviceUI = new NewDeviceUI(_availableDevices);
             _newDeviceUI.NewDmxDevice += new EventHandler<NewDmxDeviceEventArgs>(NewDeviceUI_NewDmxDevice);
             _newDeviceUI.ShowDialog();
         }
@@ -112,11 +152,40 @@ namespace Project_DMX_2._0
             _settingsUI.ShowDialog();
         }
 
+        private void RemoveSelectedDevice_Click(object sender, RoutedEventArgs e)
+        {
+            if (tctDeviceTabs.SelectedIndex >= 0 && tctDeviceTabs.SelectedItem != null)
+            {
+                MessageBoxResult result = MessageBox.Show("Are you sure you want to remove " + _dmxDevices[tctDeviceTabs.SelectedIndex].Name + "?\nThis can't be undone.", "Are you sure?", MessageBoxButton.YesNo, MessageBoxImage.Stop, MessageBoxResult.No);
+                if (result == MessageBoxResult.Yes)
+                {
+                    _availableDevices.Add(_dmxDevices[tctDeviceTabs.SelectedIndex]);
+                    _dmxDevices.RemoveAt(tctDeviceTabs.SelectedIndex);
+                    tctDeviceTabs.Items.Remove(tctDeviceTabs.SelectedItem);
+                }
+            }
+        }
+
+        private void TctDeviceTabs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.Source is TabControl)
+            {
+                TabControl tc = sender as TabControl;
+                try
+                {
+                    sbiStartAddress.Content = _dmxDevices[tc.SelectedIndex].StartAddress;
+                }
+                catch (Exception ex)
+                {
+                    logger.Error(ex);
+                }
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string name)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
         private void _dt_Tick(object sender, EventArgs e)
@@ -160,22 +229,6 @@ namespace Project_DMX_2._0
                 _newDeviceUI.Close();
             logger.Warn("Closing application.....");
             logger = null;
-        }
-
-        private void TctDeviceTabs_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (e.Source is TabControl)
-            {
-                TabControl tc = sender as TabControl;
-                try
-                {
-                    (((TabControl)sender).SelectedItem as TabItem).
-                }
-                catch (Exception)
-                {
-
-                }
-            }
         }
     }
 }

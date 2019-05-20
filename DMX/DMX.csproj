@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DmxDevice.cs" />
+    <Compile Include="JsonDmxDeviceObject.cs" />
     <Compile Include="Entities\LaserMovinghead.cs" />
     <Compile Include="Entities\LedScanner.cs" />
     <Compile Include="Entities\Enumerations\DmxDeviceTypes.cs" />
@@ -156,19 +157,19 @@
     <Resource Include="Resources\Images\Gobo Open.PNG">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\Images\LedLaser.png">
+    <Resource Include="Resources\Images\Ayra_LedLaserMovinghead.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\Images\LedMovinghead.png">
+    <Resource Include="Resources\Images\Skytec_LedMovinghead.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\Images\LedPanel.png">
+    <Resource Include="Resources\Images\EuroLite_LedPanel.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\Images\LedPar56.png">
+    <Resource Include="Resources\Images\Showtec_LedSpot.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\Images\LedScanner.png">
+    <Resource Include="Resources\Images\Ayra_LedScanner.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

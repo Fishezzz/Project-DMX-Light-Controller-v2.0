@@ -1,32 +1,36 @@
 ﻿using DMX.Entities.Enumerations;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DMX
 {
-    public abstract class DmxDevice
+    public class DmxDevice
     {
-        public DmxDevice(string name, int startAddress, DmxDeviceTypes deviceType, byte[] channels)
+        public DmxDevice(string name, int startAddress, DmxDeviceTypes deviceType, int numberOfChannels)
         {
             Name = name;
             StartAddress = startAddress;
             DeviceType = deviceType;
-            Channels = channels;
+            Channels = new byte[numberOfChannels];
+        }
+
+        public DmxDevice(JsonDmxDeviceObject jsonDmxDeviceObject)
+        {
+            Name = jsonDmxDeviceObject.Name;
+            StartAddress = jsonDmxDeviceObject.StartAddress;
+            DeviceType = Enum.IsDefined(typeof(DmxDeviceTypes), jsonDmxDeviceObject.DeviceType) ? (DmxDeviceTypes)jsonDmxDeviceObject.DeviceType : DmxDeviceTypes.Unknown;
+            Channels = new byte[jsonDmxDeviceObject.NumberOfChannels];
         }
 
         private readonly string name;
-        public string Name { get; }
+        public virtual string Name { get; }
 
         private readonly int startAddress;
-        public int StartAddress { get; }
+        public virtual int StartAddress { get; }
 
         private readonly DmxDeviceTypes deviceType;
-        public DmxDeviceTypes DeviceType { get; }
+        public virtual DmxDeviceTypes DeviceType { get; }
 
-        private byte[] channels;
-        public byte[] Channels { get; private set; }
+        private readonly byte[] channels;
+        public virtual byte[] Channels { get; private set; }
     }
 }

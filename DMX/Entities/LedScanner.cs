@@ -15,29 +15,23 @@ namespace DMX.Entities
         const double DEGREES_PER_BYTE = 1 / 65535.0;
 
         public LedScanner(string name, int startAddress, DmxDeviceTypes deviceType)
-            : base(name, startAddress, deviceType, new byte[NUMBER_OF_CHANNELS])
+            : base(name, startAddress, deviceType, NUMBER_OF_CHANNELS)
         { }
-
-        public void UpdateChannel(int channelNumber, byte value)
-        {
-            if (channelNumber >= 0 && channelNumber < Channels.Count())
-                Channels[channelNumber] = value;
-        }
 
         // CH1 + CH2
         public string GetRotationX()
         {
-            return string.Format("X: {0:F2}°", MAX_X_ROTATION * ((Channels[0] << 8) + Channels[1]) * (double)DEGREES_PER_BYTE);
+            return string.Format("{0:F2}°", MAX_X_ROTATION * (((int)Channels[0] << 8) + (int)Channels[1]) * (double)DEGREES_PER_BYTE);
         }
         // CH3 + CH4
         public string GetRotationY()
         {
-            return string.Format("Y: {0:F2}°", MAX_Y_ROTATION * ((Channels[2] << 8) + Channels[3]) * (double)DEGREES_PER_BYTE);
+            return string.Format("{0:F2}°", MAX_Y_ROTATION * (((int)Channels[2] << 8) + (int)Channels[3]) * (double)DEGREES_PER_BYTE);
         }
         // CH5
         public string GetAxisSpeed()
         {
-            return string.Format("Speed: {0:F2}%", 100 * (1 - (Channels[4] / (double)255)));    // 100->0%
+            return string.Format("{0:F2}%", 100 * (1 - (Channels[4] / (double)255)));   // 100->0%
         }
         // CH6
         public string GetDimmerStatus()
