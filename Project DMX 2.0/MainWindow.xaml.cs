@@ -160,6 +160,7 @@ namespace Project_DMX_2._0
                 if (result == MessageBoxResult.Yes)
                 {
                     _availableDevices.Add(_dmxDevices[tctDeviceTabs.SelectedIndex]);
+                    logger.Log("DmxDevice removed: " + _dmxDevices[tctDeviceTabs.SelectedIndex].Name + " @ " + _dmxDevices[tctDeviceTabs.SelectedIndex].StartAddress);
                     _dmxDevices.RemoveAt(tctDeviceTabs.SelectedIndex);
                     tctDeviceTabs.Items.Remove(tctDeviceTabs.SelectedItem);
                 }
@@ -173,7 +174,8 @@ namespace Project_DMX_2._0
                 TabControl tc = sender as TabControl;
                 try
                 {
-                    sbiStartAddress.Content = _dmxDevices[tc.SelectedIndex].StartAddress;
+                    if (tc.SelectedIndex >= 0)
+                        sbiStartAddress.Content = _dmxDevices[tc.SelectedIndex].StartAddress;
                 }
                 catch (Exception ex)
                 {

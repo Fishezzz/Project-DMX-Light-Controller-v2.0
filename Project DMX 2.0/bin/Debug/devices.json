@@ -1,6 +1,12 @@
 [
     {
         "Name": "Skytec LED Movinghead",
+        "StartAddress": 1,
+        "DeviceType": 1,
+        "NumberOfChannels": 13
+    },
+    {
+        "Name": "Skytec LED Movinghead",
         "StartAddress": 160,
         "DeviceType": 1,
         "NumberOfChannels": 13
@@ -10,23 +16,29 @@
         "StartAddress": 120,
         "DeviceType": 2,
         "NumberOfChannels": 6
-    // },
-    // {
-    //     "Name": "Ayra LED Scanner",
-    //     "StartAddress": 0,
-    //     "DeviceType": 3,
-    //     "NumberOfChannels": 11
-    // },
-    // {
-    //     "Name": "EuroLite LED Panel",
-    //     "StartAddress": 301,
-    //     "DeviceType": 4,
-    //     "NumberOfChannels": 48
-    // },
-    // {
-    //     "Name": "Showtec LED Spot",
-    //     "StartAddress": 20,
-    //     "DeviceType": 5,
-    //     "NumberOfChannels": 6
+    },
+    {
+        "Name": "Ayra LED Scanner",
+        "StartAddress": 100,
+        "DeviceType": 3,
+        "NumberOfChannels": 11
+    },
+    {
+        "Name": "EuroLite LED Panel",
+        "StartAddress": 301,
+        "DeviceType": 4,
+        "NumberOfChannels": 48
+    },
+    {
+        "Name": "Showtec LED Spot",
+        "StartAddress": 20,
+        "DeviceType": 5,
+        "NumberOfChannels": 6
+    },
+    {
+        "Name": "Showtec LED Spot",
+        "StartAddress": 40,
+        "DeviceType": 5,
+        "NumberOfChannels": 6
     }
 ]
