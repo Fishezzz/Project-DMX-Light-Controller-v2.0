@@ -1,6 +1,7 @@
 ﻿# Project DMX Light Controller v2
 
 [![BSD licensed](https://img.shields.io/github/license/Fishezzz/Project-DMX-Light-Controller-v2.0.svg)](https://github.com/Fishezzz/Project-DMX-Light-Controller-v2.0/blob/master/LICENSE)
+[![Releases](https://img.shields.io/github/release/Fishezzz/Project-DMX-Light-Controller-v2.0.svg?style=popout)](https://github.com/Fishezzz/Project-DMX-Light-Controller-v2.0/releases)
 
 ## Summary ##
 This is my final project for the subject [L OOP 3](http://onderwijsaanbod.vives-zuid.be/syllabi/n/V3M028N.htm#activetab=doelstellingen_idp1887728) (Object Oriented Programming) at my school.<br>
