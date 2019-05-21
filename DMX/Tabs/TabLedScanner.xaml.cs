@@ -37,5 +37,24 @@ namespace DMX.Tabs
             get { return dmxDevice; }
             set { dmxDevice = value; }
         }
+
+        // CH1 + CH2
+
+        // CH3 + CH4
+
+        // CH5
+
+        // CH6
+
+        // CH7
+
+        // CH8
+
+        // CH9
+
+        // CH10
+
+        // CH11
+
     }
 }
