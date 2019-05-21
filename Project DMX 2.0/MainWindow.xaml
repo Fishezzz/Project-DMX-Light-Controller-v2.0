@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="DMX Controller v2.0" Height="470" Width="600"
-        MinHeight="230" MinWidth="300"
-        Name="Main_Window" Closing="Main_Window_Closing">
+        Name="Main_Window" MinHeight="230" MinWidth="300"
+        Closing="Main_Window_Closing" Icon="Resources/DMX.ico">
     <Grid>
         <DockPanel VerticalAlignment="Top">
             <Menu DockPanel.Dock="Top">
