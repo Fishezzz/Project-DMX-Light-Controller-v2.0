@@ -87,8 +87,8 @@
                     </GroupBox>
                 </StackPanel>
                 <StackPanel>
-                    <GroupBox Header="Pre-Set Colors" Margin="5" Width="140">
-                        <ScrollViewer Height="142">
+                    <GroupBox Header="Pre-Set Colors" Margin="5" Width="120">
+                        <ScrollViewer Height="142" VerticalScrollBarVisibility="Hidden">
                             <StackPanel>
                                 <RadioButton Name="rbC10_1" Content="Closed" VerticalContentAlignment="Center" Checked="Rb_ColorsChecked"/>
                                 <RadioButton Name="rbC10_2" Content="Open / White" VerticalContentAlignment="Center" Checked="Rb_ColorsChecked"/>
@@ -110,8 +110,8 @@
                             </StackPanel>
                         </ScrollViewer>
                     </GroupBox>
-                    <GroupBox Header="Auto Programs" Margin="5" Width="140">
-                        <ScrollViewer Height="142">
+                    <GroupBox Header="Auto Programs" Margin="5" Width="120">
+                        <ScrollViewer Height="142" VerticalScrollBarVisibility="Hidden">
                             <StackPanel>
                                 <RadioButton Name="rbC12_1" Content="No function" VerticalContentAlignment="Center" Checked="Rb_ProgramsChecked"/>
                                 <RadioButton Name="rbC12_2" Content="Auto program 1" VerticalContentAlignment="Center" Checked="Rb_ProgramsChecked"/>
@@ -135,8 +135,8 @@
                     </GroupBox>
                 </StackPanel>
                 <StackPanel>
-                    <GroupBox Header="Gobo's" Margin="5" Width="100">
-                        <ScrollViewer Height="320">
+                    <GroupBox Header="Gobo's" Margin="5" Width="80">
+                        <ScrollViewer Height="320" VerticalScrollBarVisibility="Hidden">
                             <StackPanel>
                                 <RadioButton Name="rbC13_1" VerticalContentAlignment="Center" Checked="Rb_GobosChecked">
                                     <Image Source="/DMX;component/Resources/Images/Gobo Open.PNG" Height="40" Width="50"/>

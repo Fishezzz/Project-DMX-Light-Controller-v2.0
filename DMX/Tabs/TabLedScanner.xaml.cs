@@ -1,18 +1,7 @@
 ﻿using DMX.Entities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace DMX.Tabs
 {
@@ -39,22 +28,75 @@ namespace DMX.Tabs
         }
 
         // CH1 + CH2
+        private void SldrRotationX_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            ledScanner.UpdateRotationX((byte)sldrChannel1.Value, (byte)sldrChannel2.Value);
+        }
 
         // CH3 + CH4
+        private void SldrRotationY_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            ledScanner.UpdateRotationY((byte)sldrChannel3.Value, (byte)sldrChannel4.Value);
+        }
 
         // CH5
+        private void SldrAxisSpeed_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            ledScanner.UpdateAxisSpeed((byte)sldrChannel5.Value);
+        }
 
         // CH6
+        private void SldrDimmerStatus_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            ledScanner.UpdateDimmerStatus((byte)sldrChannel6.Value);
+        }
 
         // CH7
+        private void SldrShutterStatus_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            ledScanner.UpdateShutterStatus((byte)sldrChannel7.Value);
+        }
 
         // CH8
+        private void Rb_ColorsChecked(object sender, RoutedEventArgs e)
+        {
+            int index = Convert.ToInt32(((RadioButton)sender).Name.Split('_')[1]);
+            if (index == 11)
+                ledScanner.UpdatePreSetColor((byte)255);
+            else
+                ledScanner.UpdatePreSetColor((byte)((index - 1) * 15));
+        }
 
         // CH9
+        private void Rb_GobosChecked(object sender, RoutedEventArgs e)
+        {
+            int index = Convert.ToInt32(((RadioButton)sender).Name.Split('_')[1]);
+            if (index == 17)
+                ledScanner.UpdateGobo((byte)191);
+            else if (index == 18)
+                ledScanner.UpdateGobo((byte)225);
+            else
+                ledScanner.UpdateGobo((byte)((index - 1) * 9));
+        }
 
         // CH10
+        private void SldrGoboRotation_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            ledScanner.UpdateGoboRotation((byte)sldrChannel10.Value);
+        }
 
         // CH11
-
+        private void Rb_ProgramsChecked(object sender, RoutedEventArgs e)
+        {
+            int index = Convert.ToInt32(((RadioButton)sender).Name.Split('_')[1]);
+            if (index == 9)
+                ledScanner.UpdateSpecialFunction((byte)205);
+            else if (index == 10)
+                ledScanner.UpdateSpecialFunction((byte)225);
+            else if (index == 11)
+                ledScanner.UpdateSpecialFunction((byte)250);
+            else
+                ledScanner.UpdateSpecialFunction((byte)(((index - 1) * 10) + 65));
+        }
     }
 }

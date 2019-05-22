@@ -16,12 +16,12 @@
         "StartAddress": 120,
         "DeviceType": 2,
         "NumberOfChannels": 6
-    // },
-    // {
-    //     "Name": "Ayra LED Scanner",
-    //     "StartAddress": 100,
-    //     "DeviceType": 3,
-    //     "NumberOfChannels": 11
+    },
+    {
+        "Name": "Ayra LED Scanner",
+        "StartAddress": 100,
+        "DeviceType": 3,
+        "NumberOfChannels": 11
     // },
     // {
     //     "Name": "EuroLite LED Panel",

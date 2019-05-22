@@ -39,7 +39,7 @@ namespace DMX.Entities
         }
 
         // CH5
-        private string axisSpeed = "0,00%";
+        private string axisSpeed = "100,00%";
         public string AxisSpeed
         {
             get { return axisSpeed; }
@@ -119,7 +119,7 @@ namespace DMX.Entities
         public void UpdateDimmerStatus(byte? dimmer)
         {
             Channels[5] = dimmer ?? 0;
-            DimmerStatus = string.Format("Dimmed {0:F2}%", 100 * Channels[5] / (double)255);
+            DimmerStatus = string.Format("{0:F2}%", 100 * Channels[5] / (double)255);
         }
 
         // CH7
@@ -169,13 +169,13 @@ namespace DMX.Entities
             Channels[9] = rotation ?? 0;
 
             if (Channels[9] >= 0 && Channels[9] <= 127)
-                GoboRotation = string.Format("Rotation: {0:F2}°", 360 * Channels[9] / (double)128);
+                GoboRotation = string.Format("{0:F2}°", 360 * Channels[9] / (double)128);
             else if (Channels[9] <= 189)
-                GoboRotation = "CW fast to slow";
+                GoboRotation = string.Format("CW {0:F0}%", 100 * (1 - ((Channels[9] - 127) / (double)62)));    // 189-127=62   100->0%
             else if (Channels[9] <= 193)
                 GoboRotation = "Stop";
             else if (Channels[9] <= 255)
-                GoboRotation = "CCW slow to fast";
+                GoboRotation = string.Format("CCW {0:F0}%", 100 * (Channels[9] - 193) / (double)62);   // 255-193=62
             else
                 GoboRotation = "??";
         }
