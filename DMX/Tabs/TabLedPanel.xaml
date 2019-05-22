@@ -7,7 +7,7 @@
         mc:Ignorable="d" 
         d:DesignHeight="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualHeight}"
         d:DesignWidth="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualWidth}">
-    <!--Header="EuroLite LED Panel">-->
+    <!--Header="{Binding Path=Name">-->
     <Grid Background="#FFEEEEEE">
 
     </Grid>

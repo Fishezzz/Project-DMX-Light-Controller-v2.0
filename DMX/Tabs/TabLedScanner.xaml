@@ -6,7 +6,7 @@
         mc:Ignorable="d" 
         d:DesignHeight="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualHeight}"
         d:DesignWidth="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualWidth}"
-        Header="{Binding Name}">
+        Header="{Binding Path=Name}">
     <Grid Background="#FFEEEEEE">
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
             <StackPanel Orientation="Horizontal">
@@ -22,7 +22,7 @@
                         </StackPanel>
                     </StackPanel>
                     <GroupBox Header="X" Margin="5">
-                        <TextBlock TextAlignment="Center" Padding="5" FontSize="10" TextWrapping="Wrap" Text="{Binding RotationX}"/>
+                        <TextBlock TextAlignment="Center" Padding="5" FontSize="10" TextWrapping="Wrap" Text="{Binding Path=RotationX}"/>
                     </GroupBox>
                 </StackPanel>
                 <StackPanel>
@@ -37,7 +37,7 @@
                         </StackPanel>
                     </StackPanel>
                     <GroupBox Header="Y" Margin="5">
-                        <TextBlock TextAlignment="Center" Padding="5" FontSize="10" TextWrapping="Wrap" Text="{Binding RotationY}"/>
+                        <TextBlock TextAlignment="Center" Padding="5" FontSize="10" TextWrapping="Wrap" Text="{Binding Path=RotationY}"/>
                     </GroupBox>
                 </StackPanel>
                 <StackPanel>
@@ -48,7 +48,7 @@
                         </StackPanel>
                     </StackPanel>
                     <GroupBox Header="Speed" Margin="5">
-                        <TextBlock TextAlignment="Center" Padding="5" FontSize="10" Width="50" TextWrapping="Wrap" Text="{Binding AxisSpeed}"/>
+                        <TextBlock TextAlignment="Center" Padding="5" FontSize="10" Width="50" TextWrapping="Wrap" Text="{Binding Path=AxisSpeed}"/>
                     </GroupBox>
                 </StackPanel>
                 <StackPanel>
@@ -59,7 +59,7 @@
                         </StackPanel>
                     </StackPanel>
                     <GroupBox Header="Dimmer" Margin="5">
-                        <TextBlock TextAlignment="Center" Padding="5" FontSize="10" Width="50" TextWrapping="Wrap" Text="{Binding DimmerStatus}"/>
+                        <TextBlock TextAlignment="Center" Padding="5" FontSize="10" Width="50" TextWrapping="Wrap" Text="{Binding Path=DimmerStatus}"/>
                     </GroupBox>
                 </StackPanel>
                 <StackPanel>
@@ -102,10 +102,10 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <GroupBox Header="Shutter &amp; Strobe" Margin="5">
-                            <TextBlock TextAlignment="Center" Padding="0,5" FontSize="10" Width="100" TextWrapping="Wrap" Text="{Binding ShutterStatus}"/>
+                            <TextBlock TextAlignment="Center" Padding="0,5" FontSize="10" Width="100" TextWrapping="Wrap" Text="{Binding Path=ShutterStatus}"/>
                         </GroupBox>
                         <GroupBox Header="Rotation" Margin="5">
-                            <TextBlock TextAlignment="Center" Padding="5" FontSize="10" Width="60" TextWrapping="Wrap" Text="{Binding GoboRotation}"/>
+                            <TextBlock TextAlignment="Center" Padding="5" FontSize="10" Width="60" TextWrapping="Wrap" Text="{Binding Path=GoboRotation}"/>
                         </GroupBox>
                     </StackPanel>
                 </StackPanel>
