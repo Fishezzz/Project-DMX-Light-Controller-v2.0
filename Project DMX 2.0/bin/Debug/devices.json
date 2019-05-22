@@ -22,12 +22,12 @@
         "StartAddress": 100,
         "DeviceType": 3,
         "NumberOfChannels": 11
-    // },
-    // {
-    //     "Name": "EuroLite LED Panel",
-    //     "StartAddress": 301,
-    //     "DeviceType": 4,
-    //     "NumberOfChannels": 48
+    },
+    {
+        "Name": "EuroLite LED Panel",
+        "StartAddress": 301,
+        "DeviceType": 4,
+        "NumberOfChannels": 48
     },
     {
         "Name": "Showtec LED Spot",
