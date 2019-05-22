@@ -1,0 +1,69 @@
+[INFO] 01:06:19 >>>>> Initialized application at 23/05/2019 1:06:19
+[INFO] 01:06:19 >>>>> Serial port instance created
+[INFO] 01:06:19 >>>>> Dispatcher timer instance created
+[INFO] 01:06:19 >>>>> devices.json read
+[INFO] 01:06:19 >>>>> All available devices added
+[INFO] 01:06:19 >>>>> Dispatcher timer started...
+[INFO] 01:06:22 >>>>> Openend NewDeviceUI window
+[INFO] 01:06:24 >>>>> New DmxDevice added: Skytec LED Movinghead @ 1
+[INFO] 01:06:25 >>>>> TabLedMovinghead added
+[INFO] 01:06:25 >>>>> Closing NewDeviceUI window
+[INFO] 01:06:26 >>>>> Openend NewDeviceUI window
+[INFO] 01:06:28 >>>>> New DmxDevice added: Skytec LED Movinghead @ 160
+[INFO] 01:06:28 >>>>> TabLedMovinghead added
+[INFO] 01:06:28 >>>>> Closing NewDeviceUI window
+[INFO] 01:06:29 >>>>> Openend NewDeviceUI window
+[INFO] 01:06:31 >>>>> New DmxDevice added: Ayra Laser Movinghead @ 120
+[INFO] 01:06:31 >>>>> TabLaserMovinghead added
+[INFO] 01:06:31 >>>>> Closing NewDeviceUI window
+[INFO] 01:06:32 >>>>> Openend NewDeviceUI window
+[INFO] 01:06:34 >>>>> New DmxDevice added: Ayra LED Scanner @ 100
+[INFO] 01:06:34 >>>>> TabLedScanner added
+[INFO] 01:06:34 >>>>> Closing NewDeviceUI window
+[INFO] 01:06:35 >>>>> Openend NewDeviceUI window
+[INFO] 01:06:38 >>>>> New DmxDevice added: Showtec LED Spot @ 20
+[INFO] 01:06:38 >>>>> TabLedSpot added
+[INFO] 01:06:38 >>>>> Closing NewDeviceUI window
+[INFO] 01:06:39 >>>>> Openend NewDeviceUI window
+[INFO] 01:06:42 >>>>> New DmxDevice added: Showtec LED Spot @ 40
+[INFO] 01:06:42 >>>>> TabLedSpot added
+[INFO] 01:06:42 >>>>> Closing NewDeviceUI window
+[INFO] 01:07:03 >>>>> Openend SettingsUI window
+[INFO] 01:07:03 >>>>> Available COM ports added
+[INFO] 01:07:04 >>>>> COM port changed to None
+[INFO] 01:07:04 >>>>> Closing SettingsUI window
+[INFO] 01:07:05 >>>>> Openend SettingsUI window
+[INFO] 01:07:05 >>>>> Available COM ports added
+[INFO] 01:07:07 >>>>> COM port changed to COM16
+[ERROR] 01:07:09 >>>> De poort COM16 bestaat niet.
+   bij System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   bij System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   bij System.IO.Ports.SerialPort.Open()
+   bij Project_DMX_2._0.MainWindow.SettingsUI_SettingsUpdated(Object sender, SettingsEventArgs e) in C:\Users\Fishezzz\School\OOP\Project DMX 2.0\Project DMX 2.0\MainWindow.xaml.cs:regel 144
+[INFO] 01:07:09 >>>>> Closing SettingsUI window
+[INFO] 01:07:11 >>>>> Openend SettingsUI window
+[INFO] 01:07:11 >>>>> Available COM ports added
+[INFO] 01:07:13 >>>>> COM port changed to COM70
+[INFO] 01:07:13 >>>>> Serial port opened
+[INFO] 01:07:13 >>>>> Closing SettingsUI window
+[INFO] 01:07:14 >>>>> Openend SettingsUI window
+[INFO] 01:07:14 >>>>> Available COM ports added
+[INFO] 01:07:16 >>>>> COM port changed to COM69
+[INFO] 01:07:16 >>>>> Serial port opened
+[INFO] 01:07:16 >>>>> Closing SettingsUI window
+[INFO] 01:07:43 >>>>> DmxDevice removed: Skytec LED Movinghead @ 1
+[INFO] 01:07:45 >>>>> DmxDevice removed: Skytec LED Movinghead @ 160
+[INFO] 01:07:47 >>>>> DmxDevice removed: Ayra Laser Movinghead @ 120
+[INFO] 01:07:49 >>>>> DmxDevice removed: Ayra LED Scanner @ 100
+[INFO] 01:07:51 >>>>> DmxDevice removed: Showtec LED Spot @ 20
+[INFO] 01:07:53 >>>>> DmxDevice removed: Showtec LED Spot @ 40
+[INFO] 01:07:55 >>>>> Openend SettingsUI window
+[INFO] 01:07:55 >>>>> Available COM ports added
+[INFO] 01:07:57 >>>>> COM port changed to COM16
+[ERROR] 01:07:58 >>>> De poort COM16 bestaat niet.
+   bij System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   bij System.IO.Ports.SerialStream..ctor(String portName, Int32 baudRate, Parity parity, Int32 dataBits, StopBits stopBits, Int32 readTimeout, Int32 writeTimeout, Handshake handshake, Boolean dtrEnable, Boolean rtsEnable, Boolean discardNull, Byte parityReplace)
+   bij System.IO.Ports.SerialPort.Open()
+   bij Project_DMX_2._0.MainWindow.SettingsUI_SettingsUpdated(Object sender, SettingsEventArgs e) in C:\Users\Fishezzz\School\OOP\Project DMX 2.0\Project DMX 2.0\MainWindow.xaml.cs:regel 144
+[INFO] 01:07:58 >>>>> Closing SettingsUI window
+[WARNING] 01:07:59 >> Closing application.....

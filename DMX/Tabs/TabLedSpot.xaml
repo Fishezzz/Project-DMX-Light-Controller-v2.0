@@ -1,14 +1,70 @@
 ﻿<TabItem x:Class="DMX.Tabs.TabLedSpot"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-        xmlns:local="clr-namespace:DMX.Tabs"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" 
         d:DesignHeight="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualHeight}"
-        d:DesignWidth="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualWidth}">
-    <!--Header="Showtec LED Spot">-->
+        d:DesignWidth="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualWidth}"
+        Header="{Binding Path=Name}">
     <Grid Background="#FFEEEEEE">
-
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="5,0,0,0">
+                    <StackPanel Width="40">
+                        <TextBlock TextAlignment="Center" Padding="0,10" FontSize="10" TextWrapping="Wrap" Height="40" Text="Red"/>
+                        <Slider Name="sldrChannel1" Maximum="255" Width="20" Height="255" Orientation="Vertical" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True" ValueChanged="SldrRed_ValueChanged"/>
+                    </StackPanel>
+                    <GroupBox Header="R" Margin="5">
+                        <TextBlock TextAlignment="Center" Padding="5" FontSize="10" Width="30" TextWrapping="Wrap" Text="{Binding Path=Red}"/>
+                    </GroupBox>
+                </StackPanel>
+                <StackPanel Margin="0">
+                    <StackPanel Width="40">
+                        <TextBlock TextAlignment="Center" Padding="0,10" FontSize="10" TextWrapping="Wrap" Height="40" Text="Green"/>
+                        <Slider Name="sldrChannel2" Maximum="255" Width="20" Height="255" Orientation="Vertical" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True" ValueChanged="SldrGreen_ValueChanged"/>
+                    </StackPanel>
+                    <GroupBox Header="G" Margin="5">
+                        <TextBlock TextAlignment="Center" Padding="5" FontSize="10" Width="30" TextWrapping="Wrap" Text="{Binding Path=Green}"/>
+                    </GroupBox>
+                </StackPanel>
+                <StackPanel Margin="0,0,5,0">
+                    <StackPanel Width="40">
+                        <TextBlock TextAlignment="Center" Padding="0,10" FontSize="10" TextWrapping="Wrap" Height="40" Text="Blue"/>
+                        <Slider Name="sldrChannel3" Maximum="255" Width="20" Height="255" Orientation="Vertical" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True" ValueChanged="SldrBlue_ValueChanged"/>
+                    </StackPanel>
+                    <GroupBox Header="B" Margin="5">
+                        <TextBlock TextAlignment="Center" Padding="5" FontSize="10" Width="30" TextWrapping="Wrap" Text="{Binding Path=Blue}"/>
+                    </GroupBox>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel>
+                <StackPanel Margin="5,0" Width="60">
+                    <TextBlock TextAlignment="Center" Padding="0,10" FontSize="10" TextWrapping="Wrap" Height="40" Text="Macro"/>
+                    <Slider Name="sldrChannel4" Maximum="255" Width="20" Height="255" Orientation="Vertical" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True" ValueChanged="SldrMacro_ValueChanged"/>
+                </StackPanel>
+                <GroupBox Header="Macro" Margin="5">
+                    <TextBlock TextAlignment="Center" Padding="5" FontSize="10" Width="50" TextWrapping="Wrap" Text="{Binding Path=Macro}" VerticalAlignment="Bottom"/>
+                </GroupBox>
+            </StackPanel>
+            <StackPanel>
+                <StackPanel Margin="5,0" Width="60">
+                    <TextBlock TextAlignment="Center" Padding="0,5" FontSize="10" TextWrapping="Wrap" Height="40" Text="Speed&#xA;Strobe"/>
+                    <Slider Name="sldrChannel5" Maximum="255" Width="20" Height="255" Orientation="Vertical" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True" ValueChanged="SldrSpeedStrobe_ValueChanged"/>
+                </StackPanel>
+                <GroupBox Header="Speed/Strobe" Margin="0,5,0,5">
+                    <TextBlock TextAlignment="Center" Padding="5" FontSize="10" Width="80" TextWrapping="Wrap" Text="{Binding Path=SpeedStrobe}"/>
+                </GroupBox>
+            </StackPanel>
+            <StackPanel>
+                <StackPanel Margin="5,0" Width="60">
+                    <TextBlock TextAlignment="Center" Padding="0,10" FontSize="10" TextWrapping="Wrap" Height="40" Text="Mode"/>
+                    <Slider Name="sldrChannel6" Maximum="255" Width="20" Height="255" Orientation="Vertical" IsSnapToTickEnabled="True" IsMoveToPointEnabled="True" ValueChanged="SldrMode_ValueChanged"/>
+                </StackPanel>
+                <GroupBox Header="Mode" Margin="5">
+                    <TextBlock TextAlignment="Center" Padding="5" FontSize="10" Width="80" TextWrapping="Wrap" Text="{Binding Path=Mode}"/>
+                </GroupBox>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </TabItem>

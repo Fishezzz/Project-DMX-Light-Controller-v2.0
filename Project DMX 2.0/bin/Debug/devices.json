@@ -28,17 +28,17 @@
     //     "StartAddress": 301,
     //     "DeviceType": 4,
     //     "NumberOfChannels": 48
-    // },
-    // {
-    //     "Name": "Showtec LED Spot",
-    //     "StartAddress": 20,
-    //     "DeviceType": 5,
-    //     "NumberOfChannels": 6
-    // },
-    // {
-    //     "Name": "Showtec LED Spot",
-    //     "StartAddress": 40,
-    //     "DeviceType": 5,
-    //     "NumberOfChannels": 6
+    },
+    {
+        "Name": "Showtec LED Spot",
+        "StartAddress": 20,
+        "DeviceType": 5,
+        "NumberOfChannels": 6
+    },
+    {
+        "Name": "Showtec LED Spot",
+        "StartAddress": 40,
+        "DeviceType": 5,
+        "NumberOfChannels": 6
     }
 ]
