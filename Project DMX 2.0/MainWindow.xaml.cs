@@ -135,14 +135,23 @@ namespace Project_DMX_2._0
             }
 
             _sp.PortName = e.ComPort;
-            sbiComPort.Content = _sp.PortName;
             logger.Log("COM port changed to " + e.ComPort);
 
             if (!_sp.IsOpen && _sp.PortName != "None")
             {
-                _sp.Open();
-                logger.Log("Serial port opened");
+                try
+                {
+                    _sp.Open();
+                    logger.Log("Serial port opened");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("This COM port cannot be opened!\nCOM port will be set to \"None\"", "COM Port Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    _sp.PortName = "None";
+                    logger.Error(ex);
+                }
             }
+            sbiComPort.Content = _sp.PortName;
         }
 
         private void Settings_Click(object sender, RoutedEventArgs e)
@@ -176,6 +185,8 @@ namespace Project_DMX_2._0
                 {
                     if (tc.SelectedIndex >= 0)
                         sbiStartAddress.Content = _dmxDevices[tc.SelectedIndex].StartAddress;
+                    else
+                        sbiStartAddress.Content = string.Empty;
                 }
                 catch (Exception ex)
                 {
