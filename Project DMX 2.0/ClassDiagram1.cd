@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Project_DMX_2._0.Event_Args.NewDmxDeviceEventArgs">
-    <Position X="3.5" Y="3.75" Width="2.25" />
+    <Position X="3.5" Y="4.25" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
       <FileName>Event_Args\NewDmxDeviceEventArgs.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -17,13 +17,13 @@
   <Class Name="Project_DMX_2._0.NewDeviceUI" BaseTypeListCollapsed="true">
     <Position X="3.5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAQAAAAEACAAI=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAAEYAAAAEACAAI=</HashCode>
       <FileName>NewDeviceUI.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Project_DMX_2._0.Event_Args.SettingsEventArgs">
-    <Position X="6.25" Y="3.75" Width="2.25" />
+    <Position X="6.25" Y="4.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Event_Args\SettingsEventArgs.cs</FileName>
@@ -40,7 +40,7 @@
   <Class Name="Project_DMX_2._0.MainWindow">
     <Position X="0.75" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAACgBgABAKAQAACYABAAAAAgAkAAAAACAAAAAAAEAA=</HashCode>
+      <HashCode>AAACgBgABAKAQAACYABAAAAAgAkAAACACCAAAAAAEAA=</HashCode>
       <FileName>MainWindow.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

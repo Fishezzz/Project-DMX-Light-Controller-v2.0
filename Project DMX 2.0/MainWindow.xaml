@@ -4,7 +4,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="DMX Controller v2.0" Height="470" Width="600"
+        Title="DMX Controller v2.0" SizeToContent="WidthAndHeight"
         Name="Main_Window" MinHeight="230" MinWidth="300"
         Closing="Main_Window_Closing" Icon="Resources/DMX.ico">
     <Grid>
@@ -38,16 +38,16 @@
         </DockPanel>
 
         <DockPanel Margin="0,23">
-            <TabControl Name="tctDeviceTabs" HorizontalAlignment="Left" Width="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualWidth}" SelectionChanged="TctDeviceTabs_SelectionChanged"/>
+            <TabControl Name="tctDeviceTabs" HorizontalAlignment="Left" SelectionChanged="TctDeviceTabs_SelectionChanged" MinWidth="337"/>
         </DockPanel>
 
         <DockPanel Height="23" VerticalAlignment="Bottom">
-            <StatusBar Width="{Binding ActualWidth, ElementName=Main_Window}">
+            <StatusBar Width="{Binding ActualWidth, ElementName=tctDeviceTabs}">
                 <StatusBarItem VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="5,0" Content="COM Port:"/>
                 <StatusBarItem VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="0" Width="50" Name="sbiComPort" Content=""/>
                 <Separator/>
                 <StatusBarItem VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="5,0" Content="Start address:"/>
-                <StatusBarItem VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="0" Width="20" Name="sbiStartAddress" Content=""/>
+                <StatusBarItem VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="0" Name="sbiStartAddress" Content=""/>
             </StatusBar>
         </DockPanel>
     </Grid>

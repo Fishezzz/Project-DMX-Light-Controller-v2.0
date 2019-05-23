@@ -9,19 +9,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO.Ports;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace Project_DMX_2._0
@@ -74,41 +64,50 @@ namespace Project_DMX_2._0
         private void NewDeviceUI_NewDmxDevice(object sender, NewDmxDeviceEventArgs e)
         {
             _newDeviceUI = null;
-            _dmxDevices.Add(e.DmxDevice);
-            _availableDevices.Remove(e.DmxDevice);
+            //_dmxDevices.Add(_availableDevices.Find(x => x.StartAddress == e.DmxDevice.StartAddress));
             logger.Log("New DmxDevice added: " + e.DmxDevice.Name + " @ " + e.DmxDevice.StartAddress);
-            TabItem tempTabItem;
             switch (e.DmxDevice.DeviceType)
             {
                 case DmxDeviceTypes.Skytec_LedMovinghead:
-                    tempTabItem = new TabLedMovinghead(new LedMovinghead(e.DmxDevice.Name, e.DmxDevice.StartAddress, e.DmxDevice.DeviceType));
-                    tctDeviceTabs.Items.Add(tempTabItem);
-                    tctDeviceTabs.SelectedItem = tempTabItem;
+                    TabLedMovinghead tempTabLedMovinghead = new TabLedMovinghead(new LedMovinghead(e.DmxDevice.Name, e.DmxDevice.StartAddress, e.DmxDevice.DeviceType));
+                    _dmxDevices.Add(tempTabLedMovinghead.DmxDevice);
+                    tctDeviceTabs.Items.Add(tempTabLedMovinghead);
                     logger.Log("TabLedMovinghead added");
+                    tctDeviceTabs.SelectedItem = tempTabLedMovinghead;
+                    sbiStartAddress.Content = tempTabLedMovinghead.DmxDevice.StartAddress;
                     break;
                 case DmxDeviceTypes.Ayra_LedLaserMovinghead:
-                    tempTabItem = new TabLaserMovinghead(new LaserMovinghead(e.DmxDevice.Name, e.DmxDevice.StartAddress, e.DmxDevice.DeviceType));
-                    tctDeviceTabs.Items.Add(tempTabItem);
+                    //TabLaserMovinghead tempTabLaserMovinghead = new TabLaserMovinghead(new LaserMovinghead(e.DmxDevice.Name, e.DmxDevice.StartAddress, e.DmxDevice.DeviceType));
+                    TabLaserMovinghead tempTabLaserMovinghead = new TabLaserMovinghead(new LaserMovinghead(_availableDevices.Find(x => x.StartAddress == e.DmxDevice.StartAddress)));
+                    _dmxDevices.Add(tempTabLaserMovinghead.DmxDevice);
+                    tctDeviceTabs.Items.Add(tempTabLaserMovinghead);
                     logger.Log("TabLaserMovinghead added");
-                    tctDeviceTabs.SelectedItem = tempTabItem;
+                    tctDeviceTabs.SelectedItem = tempTabLaserMovinghead;
+                    sbiStartAddress.Content = tempTabLaserMovinghead.DmxDevice.StartAddress;
                     break;
                 case DmxDeviceTypes.Ayra_LedScanner:
-                    tempTabItem = new TabLedScanner(new LedScanner(e.DmxDevice.Name, e.DmxDevice.StartAddress, e.DmxDevice.DeviceType));
-                    tctDeviceTabs.Items.Add(tempTabItem);
+                    TabLedScanner tempTabLedScanner = new TabLedScanner(new LedScanner(e.DmxDevice.Name, e.DmxDevice.StartAddress, e.DmxDevice.DeviceType));
+                    _dmxDevices.Add(tempTabLedScanner.DmxDevice);
+                    tctDeviceTabs.Items.Add(tempTabLedScanner);
                     logger.Log("TabLedScanner added");
-                    tctDeviceTabs.SelectedItem = tempTabItem;
+                    tctDeviceTabs.SelectedItem = tempTabLedScanner;
+                    sbiStartAddress.Content = tempTabLedScanner.DmxDevice.StartAddress;
                     break;
                 case DmxDeviceTypes.EuroLite_LedPanel:
-                    tempTabItem = new TabLedPanel(new LedPanel(e.DmxDevice.Name, e.DmxDevice.StartAddress, e.DmxDevice.DeviceType));
-                    tctDeviceTabs.Items.Add(tempTabItem);
+                    TabLedPanel tempTabLedPanel = new TabLedPanel(new LedPanel(e.DmxDevice.Name, e.DmxDevice.StartAddress, e.DmxDevice.DeviceType));
+                    _dmxDevices.Add(tempTabLedPanel.DmxDevice);
+                    tctDeviceTabs.Items.Add(tempTabLedPanel);
                     logger.Log("TabLedPanel added");
-                    tctDeviceTabs.SelectedItem = tempTabItem;
+                    tctDeviceTabs.SelectedItem = tempTabLedPanel;
+                    sbiStartAddress.Content = tempTabLedPanel.DmxDevice.StartAddress;
                     break;
                 case DmxDeviceTypes.Showtec_LedSpot:
-                    tempTabItem = new TabLedSpot(new LedSpot(e.DmxDevice.Name, e.DmxDevice.StartAddress, e.DmxDevice.DeviceType));
-                    tctDeviceTabs.Items.Add(tempTabItem);
+                    TabLedSpot tempTabLedSpot = new TabLedSpot(new LedSpot(e.DmxDevice.Name, e.DmxDevice.StartAddress, e.DmxDevice.DeviceType));
+                    _dmxDevices.Add(tempTabLedSpot.DmxDevice);
+                    tctDeviceTabs.Items.Add(tempTabLedSpot);
                     logger.Log("TabLedSpot added");
-                    tctDeviceTabs.SelectedItem = tempTabItem;
+                    tctDeviceTabs.SelectedItem = tempTabLedSpot;
+                    sbiStartAddress.Content = tempTabLedSpot.DmxDevice.StartAddress;
                     break;
                 case DmxDeviceTypes.Unknown:
                 case DmxDeviceTypes.None:
@@ -116,6 +115,7 @@ namespace Project_DMX_2._0
                     logger.Warn("Cannot add device tab because DeviceType is None/Unknown");
                     break;
             }
+            _availableDevices.Remove(_availableDevices.Find(x => x.StartAddress == e.DmxDevice.StartAddress));
         }
 
         private void NewDevice_Click(object sender, RoutedEventArgs e)
@@ -165,12 +165,13 @@ namespace Project_DMX_2._0
         {
             if (tctDeviceTabs.SelectedIndex >= 0 && tctDeviceTabs.SelectedItem != null)
             {
-                MessageBoxResult result = MessageBox.Show("Are you sure you want to remove " + _dmxDevices[tctDeviceTabs.SelectedIndex].Name + "?\nThis can't be undone.", "Are you sure?", MessageBoxButton.YesNo, MessageBoxImage.Stop, MessageBoxResult.No);
+                DmxDevice tempDmxDevice = _dmxDevices[tctDeviceTabs.SelectedIndex];
+                MessageBoxResult result = MessageBox.Show("Are you sure you want to remove " + tempDmxDevice.Name + "?\nThis can't be undone.", "Are you sure?", MessageBoxButton.YesNo, MessageBoxImage.Stop, MessageBoxResult.No);
                 if (result == MessageBoxResult.Yes)
                 {
-                    _availableDevices.Add(_dmxDevices[tctDeviceTabs.SelectedIndex]);
-                    logger.Log("DmxDevice removed: " + _dmxDevices[tctDeviceTabs.SelectedIndex].Name + " @ " + _dmxDevices[tctDeviceTabs.SelectedIndex].StartAddress);
-                    _dmxDevices.RemoveAt(tctDeviceTabs.SelectedIndex);
+                    _availableDevices.Add(tempDmxDevice);
+                    logger.Log("DmxDevice removed: " + tempDmxDevice.Name + " @ " + _dmxDevices[tctDeviceTabs.SelectedIndex].StartAddress);
+                    _dmxDevices.Remove(tempDmxDevice);
                     tctDeviceTabs.Items.Remove(tctDeviceTabs.SelectedItem);
                 }
             }
