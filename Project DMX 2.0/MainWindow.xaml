@@ -47,7 +47,7 @@
                 <StatusBarItem VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="0" Width="50" Name="sbiComPort" Content=""/>
                 <Separator/>
                 <StatusBarItem VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="5,0" Content="Start address:"/>
-                <StatusBarItem VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="0" Width="20" Name="sbiStartAddress" Content=""/>
+                <StatusBarItem VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="0" Name="sbiStartAddress" Content=""/>
             </StatusBar>
         </DockPanel>
     </Grid>

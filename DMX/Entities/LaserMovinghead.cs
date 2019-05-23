@@ -14,6 +14,10 @@ namespace DMX.Entities
             : base(name, startAddress, deviceType, NUMBER_OF_CHANNELS)
         { }
 
+        public LaserMovinghead(DmxDevice dmxDevice)
+            : base(dmxDevice.Name, dmxDevice.StartAddress, dmxDevice.DeviceType, dmxDevice.Channels.Length)
+        { }
+
         // CH1 + CH2
         private string rotationX = "0,00°";
         public string RotationX
