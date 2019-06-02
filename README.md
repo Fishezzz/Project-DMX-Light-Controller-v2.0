@@ -1,7 +1,7 @@
 ﻿# Project DMX Light Controller v2
 
 [![BSD licensed](https://img.shields.io/github/license/Fishezzz/Project-DMX-Light-Controller-v2.0.svg)](https://github.com/Fishezzz/Project-DMX-Light-Controller-v2.0/blob/master/LICENSE)
-[![Releases](https://img.shields.io/github/release/Fishezzz/Project-DMX-Light-Controller-v2.0.svg?style=popout)](https://github.com/Fishezzz/Project-DMX-Light-Controller-v2.0/releases)
+[![Releases](https://img.shields.io/github/release/Fishezzz/Project-DMX-Light-Controller-v2.0.svg)](https://github.com/Fishezzz/Project-DMX-Light-Controller-v2.0/releases)
 [![CodeFactor](https://www.codefactor.io/repository/github/fishezzz/project-dmx-light-controller-v2.0/badge)](https://www.codefactor.io/repository/github/fishezzz/project-dmx-light-controller-v2.0)
 
 ## Summary ##
