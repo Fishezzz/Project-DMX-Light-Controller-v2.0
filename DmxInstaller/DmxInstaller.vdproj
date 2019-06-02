@@ -4,9 +4,9 @@
 "ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
 "ProjectName" = "8:DmxInstaller"
-"LanguageId" = "3:1033"
+"LanguageId" = "3:0"
 "CodePage" = "3:1252"
-"UILanguageId" = "3:1033"
+"UILanguageId" = "3:0"
 "SccProjectName" = "8:"
 "SccLocalPath" = "8:"
 "SccAuxPath" = "8:"
@@ -52,7 +52,7 @@
         "Entry"
         {
         "MsmKey" = "8:_8E2AEDAEE873A4BA3FC22CA715FCF1BC"
-        "OwnerKey" = "8:_1F0F93EF13D544A5900DB8B3A237BA08"
+        "OwnerKey" = "8:_0AAA224068864B8EB7C02761D900B359"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -64,7 +64,7 @@
         "Entry"
         {
         "MsmKey" = "8:_8E2AEDAEE873A4BA3FC22CA715FCF1BC"
-        "OwnerKey" = "8:_0AAA224068864B8EB7C02761D900B359"
+        "OwnerKey" = "8:_1F0F93EF13D544A5900DB8B3A237BA08"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -100,7 +100,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8E2AEDAEE873A4BA3FC22CA715FCF1BC"
+        "OwnerKey" = "8:_1F0F93EF13D544A5900DB8B3A237BA08"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -142,7 +142,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1F0F93EF13D544A5900DB8B3A237BA08"
+        "OwnerKey" = "8:_8E2AEDAEE873A4BA3FC22CA715FCF1BC"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -163,6 +163,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -179,6 +195,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -412,7 +436,7 @@
             "{1525181F-901A-416C-8A58-119130FE478E}:_1335FAD0712E49149A105C01F9A18F4C"
             {
             "Name" = "8:#1919"
-            "AlwaysCreate" = "11:TRUE"
+            "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:ProgramMenuFolder"
@@ -424,7 +448,7 @@
             {
             "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
             "Name" = "8:#1925"
-            "AlwaysCreate" = "11:FALSE"
+            "AlwaysCreate" = "11:TRUE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:TARGETDIR"
@@ -435,7 +459,7 @@
             "{1525181F-901A-416C-8A58-119130FE478E}:_81EA5228DEEE4E9BA0C54ED8C896F2C7"
             {
             "Name" = "8:#1916"
-            "AlwaysCreate" = "11:TRUE"
+            "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:DesktopFolder"
@@ -452,31 +476,31 @@
         }
         "MsiBootstrapper"
         {
-        "LangId" = "3:1033"
+        "LangId" = "3:0"
         "RequiresElevation" = "11:FALSE"
         }
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:DmxInstaller"
-        "ProductCode" = "8:{CFEF462F-89BD-4D23-A55D-490B6DDB1F26}"
-        "PackageCode" = "8:{3DB3EF46-9B08-4534-81F4-879292063E7C}"
+        "ProductName" = "8:Dmx Light Controller v2"
+        "ProductCode" = "8:{47E3F08D-98EB-4E6D-B51D-37278DBACE2B}"
+        "PackageCode" = "8:{C2C396E9-D406-4B89-B5C6-3240C6ABF1FC}"
         "UpgradeCode" = "8:{57B7D254-3278-456D-B90D-70188C09D996}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Default Company Name"
+        "ProductVersion" = "8:2.1.0"
+        "Manufacturer" = "8:Fishezzz"
         "ARPHELPTELEPHONE" = "8:"
-        "ARPHELPLINK" = "8:"
+        "ARPHELPLINK" = "8:https://github.com/Fishezzz/Project-DMX-Light-Controller-v2.0/issues"
         "Title" = "8:DmxInstaller"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
-        "Keywords" = "8:"
-        "ARPCOMMENTS" = "8:"
-        "ARPURLINFOABOUT" = "8:"
+        "ARPCONTACT" = "8:Fishezzz"
+        "Keywords" = "8:DMX"
+        "ARPCOMMENTS" = "8:A DMX Light Controller, version 2"
+        "ARPURLINFOABOUT" = "8:https://github.com/Fishezzz"
         "ARPPRODUCTICON" = "8:"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
@@ -580,34 +604,6 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_299B9B4B554C472C834065E2FD96BBA8"
-            {
-            "Name" = "8:DMX Controller"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_1335FAD0712E49149A105C01F9A18F4C"
-            "Folder" = "8:_1335FAD0712E49149A105C01F9A18F4C"
-            "WorkingFolder" = "8:_1335FAD0712E49149A105C01F9A18F4C"
-            "Icon" = "8:_F849B721CFCD4BB7BAFAC99E808DBBE0"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_94EBB0B000AF45F0B22050C259968DBF"
-            {
-            "Name" = "8:DMX Controller"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_81EA5228DEEE4E9BA0C54ED8C896F2C7"
-            "Folder" = "8:_81EA5228DEEE4E9BA0C54ED8C896F2C7"
-            "WorkingFolder" = "8:_81EA5228DEEE4E9BA0C54ED8C896F2C7"
-            "Icon" = "8:_F849B721CFCD4BB7BAFAC99E808DBBE0"
-            "Feature" = "8:"
-            }
         }
         "UserInterface"
         {
@@ -1065,7 +1061,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_E41A839F5775436780B1EA974A84FB08"
             {
-            "SourcePath" = "8:..\\Project DMX 2.0\\obj\\Debug\\Project_DMX_2._0.exe"
+            "SourcePath" = "8:..\\Project DMX 2.0\\obj\\Debug\\DmxLightControllerV2.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_73D920549F3A433EACD10ED1C1D8534E"
