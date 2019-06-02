@@ -49,22 +49,37 @@ namespace Project_DMX_2._0
 
             _dmxDevices = new List<DmxDevice>();
 
-            string devicesJSON  = new System.IO.StreamReader(Environment.CurrentDirectory + "\\devices.json").ReadToEnd();
-            logger.Log("devices.json read");
-            List<JsonDmxDeviceObject> tempDmxDevices = JsonConvert.DeserializeObject<List<JsonDmxDeviceObject>>(devicesJSON);
-            _availableDevices = new List<DmxDevice>();
-            foreach (JsonDmxDeviceObject deviceObject in tempDmxDevices)
-                _availableDevices.Add(new DmxDevice(deviceObject));
-            logger.Log("All available devices added");
+            string devicesJSON = string.Empty;
+            try
+            {
+                logger.Log("Reading devices.json");
+                devicesJSON  = new System.IO.StreamReader(Environment.CurrentDirectory + "\\devices.json").ReadToEnd();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The file \"devices.json\" is missing!\nThe program can't start when this file is missing.", "Critical error! Missing file!", MessageBoxButton.OK, MessageBoxImage.Error);
+                logger.Warn("File devices.json not found. Can't start program!");
+                logger.Error(ex);
+                this.Close();
+            }
 
-            _dt.Start();
-            logger.Log("Dispatcher timer started...");
+            if (devicesJSON != string.Empty)
+            {
+                logger.Log("Done reading.");
+                List<JsonDmxDeviceObject> tempDmxDevices = JsonConvert.DeserializeObject<List<JsonDmxDeviceObject>>(devicesJSON);
+                _availableDevices = new List<DmxDevice>();
+                foreach (JsonDmxDeviceObject deviceObject in tempDmxDevices)
+                    _availableDevices.Add(new DmxDevice(deviceObject));
+                logger.Log("All available devices added");
+
+                _dt.Start();
+                logger.Log("Dispatcher timer started...");
+            }
         }
 
         private void NewDeviceUI_NewDmxDevice(object sender, NewDmxDeviceEventArgs e)
         {
             _newDeviceUI = null;
-            //_dmxDevices.Add(_availableDevices.Find(x => x.StartAddress == e.DmxDevice.StartAddress));
             logger.Log("New DmxDevice added: " + e.DmxDevice.Name + " @ " + e.DmxDevice.StartAddress);
             switch (e.DmxDevice.DeviceType)
             {
@@ -77,7 +92,6 @@ namespace Project_DMX_2._0
                     sbiStartAddress.Content = tempTabLedMovinghead.DmxDevice.StartAddress;
                     break;
                 case DmxDeviceTypes.Ayra_LedLaserMovinghead:
-                    //TabLaserMovinghead tempTabLaserMovinghead = new TabLaserMovinghead(new LaserMovinghead(e.DmxDevice.Name, e.DmxDevice.StartAddress, e.DmxDevice.DeviceType));
                     TabLaserMovinghead tempTabLaserMovinghead = new TabLaserMovinghead(new LaserMovinghead(_availableDevices.Find(x => x.StartAddress == e.DmxDevice.StartAddress)));
                     _dmxDevices.Add(tempTabLaserMovinghead.DmxDevice);
                     tctDeviceTabs.Items.Add(tempTabLaserMovinghead);
