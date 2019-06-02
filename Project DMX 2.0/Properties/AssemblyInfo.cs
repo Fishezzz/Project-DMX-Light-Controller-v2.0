@@ -8,9 +8,9 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Project DMX 2.0")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A DMX Light Controller, version 2")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Fishezzz")]
 [assembly: AssemblyProduct("Project DMX 2.0")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
