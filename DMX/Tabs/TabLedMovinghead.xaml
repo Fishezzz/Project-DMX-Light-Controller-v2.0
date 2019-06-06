@@ -5,8 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        d:DesignHeight="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualHeight}"
-        d:DesignWidth="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualWidth}"
         Header="{Binding Path=Name}">
     <Grid Background="#FFEEEEEE">
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
@@ -136,7 +134,7 @@
                 </StackPanel>
                 <StackPanel>
                     <GroupBox Header="Gobo's" Margin="5" Width="80">
-                        <ScrollViewer Height="320" VerticalScrollBarVisibility="Hidden">
+                        <ScrollViewer Height="318" VerticalScrollBarVisibility="Hidden">
                             <StackPanel>
                                 <RadioButton Name="rbC13_1" VerticalContentAlignment="Center" Checked="Rb_GobosChecked">
                                     <Image Source="/DMX;component/Resources/Images/Gobo Open.PNG" Height="40" Width="50"/>

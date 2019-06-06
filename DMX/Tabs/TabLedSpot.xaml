@@ -4,8 +4,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" 
-        d:DesignHeight="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualHeight}"
-        d:DesignWidth="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Parent.ActualWidth}"
         Header="{Binding Path=Name}">
     <Grid Background="#FFEEEEEE">
         <StackPanel Orientation="Horizontal">

@@ -38,11 +38,15 @@
         </DockPanel>
 
         <DockPanel Margin="0,23">
-            <TabControl Name="tctDeviceTabs" HorizontalAlignment="Left" SelectionChanged="TctDeviceTabs_SelectionChanged" MinWidth="337"/>
+            <TabControl Name="tctDeviceTabs" HorizontalAlignment="Left" SelectionChanged="TctDeviceTabs_SelectionChanged" MinWidth="340" MaxWidth="680">
+                <TabControl.Background>
+                    <ImageBrush ImageSource="Resources/Images/background.png" Stretch="None" AlignmentX="Left" AlignmentY="Top"/>
+                </TabControl.Background>
+            </TabControl>
         </DockPanel>
 
         <DockPanel Height="23" VerticalAlignment="Bottom">
-            <StatusBar Width="{Binding ActualWidth, ElementName=tctDeviceTabs}">
+            <StatusBar>
                 <StatusBarItem VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="5,0" Content="COM Port:"/>
                 <StatusBarItem VerticalContentAlignment="Center" HorizontalAlignment="Left" Padding="0" Width="50" Name="sbiComPort" Content=""/>
                 <Separator/>
